@@ -15,7 +15,7 @@ $this->title = 'My Yii Application';
         <table>
             <tbody>
                 <tr>
-                    <td>r</td>
+                    <td>vhgv</td>
                 </tr>
             </tbody>
         </table>
