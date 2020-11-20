@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Imovels';
+$this->title = 'Imovel';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="imovel-index">
