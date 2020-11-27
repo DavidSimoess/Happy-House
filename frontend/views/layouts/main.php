@@ -4,8 +4,8 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
@@ -31,12 +31,10 @@ AppAsset::register($this);
     NavBar::begin([
         'brandLabel' => 'Happy House',
         'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
+
     ]);
     $menuItems = [
-        /*['label' => 'Home', 'url' => ['/site/index']],*/
+        ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Comprar', 'url' => ['/imovel/index']],
         ['label' => 'Sobre', 'url' => ['/site/about']],
     ];

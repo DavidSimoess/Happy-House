@@ -4,6 +4,9 @@
 
 $this->title = 'My Yii Application';
 ?>
+
+
+<link rel="stylesheet" href="../../web/css/site.css">
 <div class="site-index">
 
     <div class="jumbotron">
@@ -12,16 +15,8 @@ $this->title = 'My Yii Application';
 
     <div class="body-content">
 
-        <table>
-            <tbody>
-                <tr>
 
-                    <td>vhg</td>
-                    <td>fds</td>
 
-                </tr>
-            </tbody>
-        </table>
 
     </div>
 </div>
