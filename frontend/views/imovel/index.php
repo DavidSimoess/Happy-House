@@ -7,281 +7,422 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Imovel';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
-<div class="imovel-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Imovel', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'estado',
-            'area',
-            'n_quartos',
-            'n_wc',
-            //'preco',
-            //'descricao',
-            //'garagem',
-            //'piso',
-            //'morada',
-            //'codigo_postal',
-            //'cidade',
-            //'id_utilizador',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-    <!DOCTYPE html>
+    <!doctype html>
     <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Resume - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- google fonts -->
+        <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="assets/css/style-starter.css">
     </head>
-    <body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <span class="d-block d-lg-none">Clarence Taylor</span>
-            <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="" /></span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Casas">Casas</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Apartamentos">Apartamentos</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li>
+    <body>
+
+    <!--header-->
+
+    <!--/header-->
+    <section class="w3l-about-breadcrumb">
+        <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+            <div class="container pt-lg-5 py-3">
+            </div>
+        </div>
+    </section>
+    <section class="w3l-breadcrumb">
+        <div class="container">
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="index.php">Home</a></li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> Imovel</li>
             </ul>
         </div>
-    </nav>
-    <!-- Page Content-->
-    <div class="container-fluid p-0">
-        <!-- About-->
-        <h2 class="m-md-5">Casas</h2>
-        <section class="resume-section" id="Casas">
-            <div class="card-group">
-                <div class="card">
-                    <img class="card-img-top" src="https://www.topgeres.pt/wp-content/uploads/2019/06/MG_6275.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Casa na Montanha</h5>
-                        <p class="card-text">Serra do Geres com 103m 2 WC com tudo equipado e 3 quartos.</p>
+    </section>
+    <section class="locations-1" id="locations">
+        <div class="locations py-5">
+            <div class="container py-lg-5 py-md-4 py-2">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 listing-img">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$25,00,000</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Cottage villa</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team1.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Preço:   234324€</small>
+                    <div class="col-lg-4 col-md-6 listing-img mt-md-0 mt-5">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p2.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$32,00,000</h3>
+
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Sand house</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team2.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 listing-img mt-lg-0 pt-lg-0 mt-5 pt-md-2">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p3.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$47,00,000</h3>
+
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Extension villa</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team3.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 listing-img mt-5 pt-md-2">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p4.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$19,00,000</h3>
+
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Corner house</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team4.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 listing-img mt-5 pt-md-2">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p5.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$34,00,000</h3>
+
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Beach House</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team5.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 listing-img mt-5 pt-md-2">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p6.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$29,00,000</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Cottage villa</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team6.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 listing-img mt-5 pt-md-2">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p7.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$38,00,000</h3>
+
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Beach House</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team1.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 listing-img mt-5 pt-md-2">
+                        <a href="#url">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
+                                <img class="img-fluid" src="assets/images/p8.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">$51,00,000</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Cottage villa</a>
+                            </h4>
+                            <p class="user_position">Unnamed Road, Vegas, NV 89103.</p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> 1 Bed</li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                            </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team2.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://www.athenaadvisers.com/wp-content/uploads/2019/08/Villas20for20sale20Quinta20da20Comporta20Portugal20Athena20Advisers206-900x600.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Serra da Estrela ,Guarda</h5>
-                        <p class="card-text">Casa com piscina totalmete equipada contem 3 quartos e 3 Wc.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
+
+                <!-- pagination -->
+                <div class="pagination-wrapper mt-5 pt-lg-3 text-center">
+                    <ul class="page-pagination">
+                        <li><span aria-current="page" class="page-numbers current">1</span></li>
+                        <li><a class="page-numbers" href="#url">2</a></li>
+                        <li><a class="page-numbers" href="#url">3</a></li>
+                        <li><a class="page-numbers" href="#url">...</a></li>
+                        <li><a class="page-numbers" href="#url">15</a></li>
+                        <li><a class="next" href="#url">Next <span class="fa fa-angle-right"></span></a></li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://images.homify.com/c_fill,f_auto,q_0,w_740/v1442865033/p/photo/image/926398/EUB_0977.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <!-- //pagination -->
+            </div>
+        </div>
+    </section>
+    <!-- footers 20 -->
+    <section class="w3l-footers-20">
+        <div class="footers20">
+            <div class="container">
+                <div class="footers20-content">
+                    <div class="d-grid grid-col-4 grids-content">
+                        <div class="column">
+                            <a href="#url" class="link"><span class="fa fa-comments"></span></a>
+                            <a href="#url" class="title-small">Free consultation</a>
+                            <h4>Schedule a free consultation with our specialist.</h4>
+                            <a href="#buytheme" class="btn btn-style btn-primary"> Schedule now
+                                <span class="fa fa-long-arrow-right ml-2"></span> </a>
+                        </div>
+                        <div class="column">
+                            <a href="#url" class="link"><span class="fa fa-phone"></span></a>
+                            <a href="#url" class="title-small">help desk</a>
+                            <h4>Do you have questions or want more infomation? Call Now</h4>
+                            <a href="tel:+1-2345-678-11">
+                                <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+                                </p>
+                            </a>
+                        </div>
+                        <div class="column mt-lg-0 mt-md-5">
+                            <h4 class="mb-1">Signup for newsletter</h4>
+                            <p>and get latest news and updates</p>
+                            <form action="#" class="subscribe-form mt-4" method="post">
+                                <div class="form-group">
+                                    <input type="email" name="subscribe" placeholder="Enter your email" required="">
+                                    <button class="btn btn-style btn-primary">Subscribe</button>
+                                </div>
+                            </form>
+                            <ul class="footers-17_social">
+                                <h4 class="d-inline mr-4">Follow us</h4>
+                                <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+                                <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                    <div class="d-grid grid-col-3 grids-content1 bottom-border">
+                        <div class="columns copyright-grid align-self">
+                            <p class="copy-footer-29">© 2020 Estate sale. All rights reserved | Designed by <a
+                                        href="https://w3layouts.com">W3layouts</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Experience-->
-        <section class="resume-section" id="experience">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Experience</h2>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Senior Web Developer</h3>
-                        <div class="subheading mb-3">Intelitec Solutions</div>
-                        <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">March 2013 - Present</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Web Developer</h3>
-                        <div class="subheading mb-3">Intelitec Solutions</div>
-                        <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">December 2011 - March 2013</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Junior Web Designer</h3>
-                        <div class="subheading mb-3">Shout! Media Productions</div>
-                        <p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail. Keeping your eye on the ball while performing a deep dive on the start-up mentality to derive convergence on cross-platform integration.</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">July 2010 - December 2011</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">Web Design Intern</h3>
-                        <div class="subheading mb-3">Shout! Media Productions</div>
-                        <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">September 2008 - June 2010</span></div>
-                </div>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Education-->
-        <section class="resume-section" id="education">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Education</h2>
-                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">University of Colorado Boulder</h3>
-                        <div class="subheading mb-3">Bachelor of Science</div>
-                        <div>Computer Science - Web Development Track</div>
-                        <p>GPA: 3.23</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>
-                </div>
-                <div class="d-flex flex-column flex-md-row justify-content-between">
-                    <div class="flex-grow-1">
-                        <h3 class="mb-0">James Buchanan High School</h3>
-                        <div class="subheading mb-3">Technology Magnet Program</div>
-                        <p>GPA: 3.56</p>
-                    </div>
-                    <div class="flex-shrink-0"><span class="text-primary">August 2002 - May 2006</span></div>
-                </div>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Skills-->
-        <section class="resume-section" id="skills">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Skills</h2>
-                <div class="subheading mb-3">Programming Languages & Tools</div>
-                <ul class="list-inline dev-icons">
-                    <li class="list-inline-item"><i class="fab fa-html5"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-css3-alt"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-js-square"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-angular"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-react"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-node-js"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-sass"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-less"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-wordpress"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-gulp"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
-                    <li class="list-inline-item"><i class="fab fa-npm"></i></li>
-                </ul>
-                <div class="subheading mb-3">Workflow</div>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Mobile-First, Responsive Design
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Cross Browser Testing & Debugging
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Cross Functional Teams
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        Agile Development & Scrum
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Interests-->
-        <section class="resume-section" id="interests">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Interests</h2>
-                <p>Apart from being a web developer, I enjoy most of my time being outdoors. In the winter, I am an avid skier and novice ice climber. During the warmer months here in Colorado, I enjoy mountain biking, free climbing, and kayaking.</p>
-                <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology advancements in the front-end web development world.</p>
-            </div>
-        </section>
-        <hr class="m-0" />
-        <!-- Awards-->
-        <section class="resume-section" id="awards">
-            <div class="resume-section-content">
-                <h2 class="mb-5">Awards & Certifications</h2>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        Google Analytics Certified Developer
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        Mobile Web Specialist - Google Certification
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        1
-                        <sup>st</sup>
-                        Place - University of Colorado Boulder - Emerging Tech Competition 2009
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        1
-                        <sup>st</sup>
-                        Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        2
-                        <sup>nd</sup>
-                        Place - University of Colorado Boulder - Emerging Tech Competition 2008
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        1
-                        <sup>st</sup>
-                        Place - James Buchanan High School - Hackathon 2006
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
-                        3
-                        <sup>rd</sup>
-                        Place - James Buchanan High School - Hackathon 2005
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </div>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+        </div>
+        <!-- move top -->
+        <button onclick="topFunction()" id="movetop" title="Go to top">
+            &#10548;
+        </button>
+
+    </section>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+    <script src="assets/js/theme-change.js"></script><!-- theme switch js (light and dark)-->
+
+    <!-- stats number counter-->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+    <!-- //stats number counter -->
+
+    <!-- owlcarousel -->
+    <script src="assets/js/owl.carousel.js"></script>
+    <!-- script for blog post slider -->
+
     </body>
+
     </html>
+

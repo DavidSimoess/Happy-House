@@ -12,6 +12,8 @@ use Yii;
  * @property string $data_fim
  * @property float $preco
  * @property int $id_imovel
+ *
+ * @property Imovel $imovel
  */
 class Aluguer extends \yii\db\ActiveRecord
 {
@@ -33,6 +35,7 @@ class Aluguer extends \yii\db\ActiveRecord
             [['data_inicio', 'data_fim'], 'safe'],
             [['preco'], 'number'],
             [['id_imovel'], 'integer'],
+            [['id_imovel'], 'exist', 'skipOnError' => true, 'targetClass' => Imovel::className(), 'targetAttribute' => ['id_imovel' => 'id']],
         ];
     }
 
@@ -48,5 +51,15 @@ class Aluguer extends \yii\db\ActiveRecord
             'preco' => 'Preco',
             'id_imovel' => 'Id Imovel',
         ];
+    }
+
+    /**
+     * Gets query for [[Imovel]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImovel()
+    {
+        return $this->hasOne(Imovel::className(), ['id' => 'id_imovel']);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class VendaController extends \yii\web\Controller
+class UserController extends \yii\web\Controller
 {
     public function actionIndex()
     {

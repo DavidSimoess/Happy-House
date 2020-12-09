@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 20-Nov-2020 às 19:14
+-- Generation Time: 09-Dez-2020 às 14:54
 -- Versão do servidor: 5.7.19
 -- PHP Version: 7.0.23
 
@@ -35,7 +35,8 @@ CREATE TABLE IF NOT EXISTS `aluguer` (
   `data_fim` datetime NOT NULL,
   `preco` decimal(10,0) NOT NULL,
   `id_imovel` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_imovel` (`id_imovel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -149,9 +150,12 @@ CREATE TABLE IF NOT EXISTS `imovel` (
   `morada` varchar(500) NOT NULL,
   `codigo_postal` varchar(8) NOT NULL,
   `cidade` varchar(20) NOT NULL,
+  `latitude` decimal(10,0) NOT NULL,
+  `longitude` decimal(10,0) NOT NULL,
   `imagem` varchar(500) NOT NULL,
-  `id_utilizador` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -191,9 +195,11 @@ DROP TABLE IF EXISTS `pedido`;
 CREATE TABLE IF NOT EXISTS `pedido` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(50) NOT NULL,
-  `id_utiluizador` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `id_imovel` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_imovel` (`id_imovel`),
+  KEY `id_user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -206,6 +212,9 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `telemovel` int(9) NOT NULL,
+  `nif` int(9) NOT NULL,
+  `favoritos` int(11) NOT NULL,
   `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -223,23 +232,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `utilizador`
---
-
-DROP TABLE IF EXISTS `utilizador`;
-CREATE TABLE IF NOT EXISTS `utilizador` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(50) NOT NULL,
-  `telemovel` int(9) NOT NULL,
-  `nif` int(9) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `favoritos` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `venda`
 --
 
@@ -249,12 +241,19 @@ CREATE TABLE IF NOT EXISTS `venda` (
   `preco` decimal(10,0) NOT NULL,
   `data_venda` datetime NOT NULL,
   `id_imovel` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `id_imovel` (`id_imovel`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Limitadores para a tabela `aluguer`
+--
+ALTER TABLE `aluguer`
+  ADD CONSTRAINT `aluguer_ibfk_1` FOREIGN KEY (`id_imovel`) REFERENCES `imovel` (`id`);
 
 --
 -- Limitadores para a tabela `auth_assignment`
@@ -274,6 +273,25 @@ ALTER TABLE `auth_item`
 ALTER TABLE `auth_item_child`
   ADD CONSTRAINT `auth_item_child_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `auth_item_child_ibfk_2` FOREIGN KEY (`child`) REFERENCES `auth_item` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Limitadores para a tabela `imovel`
+--
+ALTER TABLE `imovel`
+  ADD CONSTRAINT `imovel_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+
+--
+-- Limitadores para a tabela `pedido`
+--
+ALTER TABLE `pedido`
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`id_imovel`) REFERENCES `imovel` (`id`);
+
+--
+-- Limitadores para a tabela `venda`
+--
+ALTER TABLE `venda`
+  ADD CONSTRAINT `venda_ibfk_1` FOREIGN KEY (`id_imovel`) REFERENCES `imovel` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

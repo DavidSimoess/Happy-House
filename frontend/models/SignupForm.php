@@ -13,6 +13,8 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $telemovel;
+    public $nif;
 
 
     /**
@@ -34,6 +36,12 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
+
+            ['telemovel', 'required'],
+          //  ['telemovel', 'compare','compareValue' == 9,'type' => 'number'],
+
+            ['nif', 'required'],
+           // ['nif', 'compare','compareValue' == 9,'type' => 'number'],
         ];
     }
 
@@ -44,23 +52,25 @@ class SignupForm extends Model
      */
     public function signup()
     {
-        if (!$this->validate()) {
-            return null;
+        if ($this->validate()) {
+
+            $user = new User();
+            $user->username = $this->username;
+            $user->email = $this->email;
+            $user->telemovel =$this->telemovel;
+            $user->nif = $this->nif;
+            $user->setPassword($this->password);
+            $user->generateAuthKey();
+            $user->generateEmailVerificationToken();
+            $user->save(false);
+
+            $auth = \Yii::$app->authManager;
+            $authorRole = $auth->getRole('author');
+            $auth->assign($authorRole, $user->getId());
+
+            return $user;
         }
-        
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-
-        $auth = \Yii::$app->authManager;
-        $authorRole = $auth->getRole('author');
-        $auth->assign($authorRole, $user->getId());
-
-        return $user->save() && $this->sendEmail($user);
-
+        return null;
     }
 
     /**
