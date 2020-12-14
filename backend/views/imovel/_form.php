@@ -34,7 +34,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'cidade')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'id_utilizador')->textInput() ?>
+    <?= $form->field($model, 'latitude')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'longitude')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'imagem')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'id_user')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

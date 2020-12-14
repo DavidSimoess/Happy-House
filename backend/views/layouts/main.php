@@ -20,7 +20,7 @@ AppAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode('Happy House') ?></title>
     <?php $this->head() ?>
 </head>
 <body>
@@ -29,16 +29,21 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandLabel' => 'Happy house',
+        'brandUrl' => ['/user/index'],
 
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        //['label' => 'Home', 'url' => ['/site/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
+        $menuItems[] = ['label' => 'Gestão de Utilizadores', 'url' => ['/user/index']];
+        $menuItems[] = ['label' => 'Gestão de Imóveis', 'url' => ['/imovel/index']];
+        $menuItems[] = ['label' => 'Gestão de Pedidos', 'url' => ['/pedido/index']];
+        $menuItems[] = ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']];
+        $menuItems[] = ['label' => 'Gestão de Alugueres', 'url' => ['/aluguer/index']];
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
@@ -64,13 +69,7 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>

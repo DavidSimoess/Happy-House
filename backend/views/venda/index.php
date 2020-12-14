@@ -1,9 +1,53 @@
 <?php
-/* @var $this yii\web\View */
-?>
-<h1>venda/index</h1>
 
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
+use yii\helpers\Html;
+use yii\grid\GridView;
+rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
+
+/* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Vendas';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="venda-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Create Venda', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'preco',
+            'data_venda',
+            'id_imovel',
+
+            //['class' => 'yii\grid\ActionColumn'],
+
+            ['class' => 'yii\grid\ActionColumn',
+                'contentOptions' => ['style' => 'width: 7%'],
+                'visible'=> Yii::$app->user->isGuest ? false : true,
+                'buttons'=>[
+                    'view'=>function ($url) {
+                        return Html::a('', $url, ['class' => 'fa fa-fw fa-eye']);
+                    },
+                    'update'=>function ($url) {
+                        return Html::a('', $url, ['class' => 'fa fa-fw fa-edit']);
+                    },
+                    'delete'=>function ($url) {
+                        return Html::a('', $url, ['class' => 'fa fa-fw fa-trash']);
+                    },
+                ],
+            ],
+        ],
+    ]); ?>
+
+
+</div>

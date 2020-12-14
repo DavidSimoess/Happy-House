@@ -41,7 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'morada',
             'codigo_postal',
             'cidade',
-            'id_utilizador',
+            'latitude',
+            'longitude',
+            'imagem',
+            'id_user',
         ],
     ]) ?>
 
