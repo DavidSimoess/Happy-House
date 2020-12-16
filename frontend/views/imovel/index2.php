@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
+
 rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 
 /* @var $this yii\web\View */
@@ -9,9 +11,8 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 /* @var $model common\models\Imovel */
 
 
-
-
-?>    <!doctype html>
+?>
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -30,7 +31,6 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 <div class="imovel-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
 
 
     <?= GridView::widget([
@@ -59,9 +59,9 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 
             ['class' => 'yii\grid\ActionColumn',
                 'contentOptions' => ['style' => 'width: 7%'],
-                'visible'=> Yii::$app->user->isGuest ? false : true,
-                'buttons'=>[
-                    'view'=>function ($url) {
+                'visible' => Yii::$app->user->isGuest ? false : true,
+                'buttons' => [
+                    'view' => function ($url) {
 
                         return Html::a('', $url, ['class' => 'fa fa-fw fa-eye']);
                     },
@@ -94,45 +94,47 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="row">
                 <?php foreach ($dataProvider->models as $model) { ?>
-                <div class="col-lg-4 col-md-6 listing-img">
+                    <div class="col-lg-4 col-md-6 listing-img">
+                        <a href="<?=Url::to(['view', 'id'=>$model->id])?>">
                         <div class="box16">
                             <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
                             <img class="img-fluid" src="assets/images/p1.jpg" alt="">
                             <div class="box-content">
                                 <h3 class="title">
-                                    <?= $model->preco?>
+                                    <?= $model->preco ?>
                             </div>
                         </div>
-                    <div class="listing-details blog-details align-self">
-                        <h4 class="user_title agent">
-                            <a href="#url">Cottage villa</a>
-                        </h4>
-                        <p class="user_position"><?=  $model->cidade ?></p>
-                        <ul class="mt-3 estate-info">
-                            <li><span class="fa fa-bed"></span> <?= $model->estado ?></li>
-                            <li><span class="fa fa-shower"></span> 2 Baths</li>
-                            <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
-                        </ul>
-                        <div class="author align-items-center mt-4">
-                            <a href="#img" class="comment-img">
-                                <img src="assets/images/team1.jpg" alt="" class="img-fluid">
-                            </a>
-                            <ul class="blog-meta">
-                                <li>
-                                    <a href="#url">Laura Antiochus </a>
-                                </li>
-                                <li class="meta-item blog-lesson">
-                                    <span class="meta-value"> Selling agent</span>
-                                </li>
+                        </a>
+                        <div class="listing-details blog-details align-self">
+                            <h4 class="user_title agent">
+                                <a href="#url">Cottage villa</a>
+                            </h4>
+                            <p class="user_position"><?= $model->cidade ?></p>
+                            <ul class="mt-3 estate-info">
+                                <li><span class="fa fa-bed"></span> <?= $model->estado ?></li>
+                                <li><span class="fa fa-shower"></span> 2 Baths</li>
+                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
                             </ul>
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="assets/images/team1.jpg" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">Laura Antiochus </a>
+                                    </li>
+                                    <li class="meta-item blog-lesson">
+                                        <span class="meta-value"> Selling agent</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
 
 
+            </div>
         </div>
-    </div>
 </section>
 <!-- footers 20 -->
 <section class="w3l-footers-20">
