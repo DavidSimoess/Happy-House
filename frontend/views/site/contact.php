@@ -65,12 +65,8 @@ $this->title = 'Contact';
 
                                     <?= $form->field($model, 'mensagem')->textarea(['rows' => 6]) ?>
 
-                                    <?= $form->field($model, 'verificacao')->widget(Captcha::className(), [
-                                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
-                                    ]) ?>
-
-                                    <div class="form-group">
-                                        <?= Html::submitButton('enviar', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
+                                    <div class="form-group ">
+                                        <?= Html::submitButton('Enviar', ['class' => 'btn btn-primary', 'name' => 'contact-button']) ?>
                                     </div>
 
 
@@ -89,20 +85,3 @@ $this->title = 'Contact';
         </div>
     </div>
 </section>
-
-<!-- Footer -->
-<footer class="page-footer font-small unique-color-dark pt-4">
-    <div class="container">
-        <ul class="list-unstyled list-inline text-center py-2">
-            <li class="list-inline-item">
-                <h5 class="mb-1">Register for free</h5>
-            </li>
-            <li class="list-inline-item">
-                <a href="#!" class="btn btn-outline-white btn-rounded">Sign up!</a>
-            </li>
-        </ul>
-    </div>
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
-    </div>
-</footer>

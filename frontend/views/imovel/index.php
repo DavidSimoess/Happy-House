@@ -26,9 +26,6 @@ $this->title = 'Imovel';
     </head>
     <body>
 
-    <!--header-->
-
-    <!--/header-->
     <section class="w3l-about-breadcrumb">
         <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
             <div class="container pt-lg-5 py-3">
@@ -39,7 +36,7 @@ $this->title = 'Imovel';
         <div class="container">
             <ul class="breadcrumbs-custom-path">
                 <li><a href="index.php">Home</a></li>
-                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> Imovel</li>
+                <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span>Comprar</li>
             </ul>
         </div>
     </section>
@@ -48,7 +45,7 @@ $this->title = 'Imovel';
             <div class="container py-lg-5 py-md-4 py-2">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 listing-img">
-                        <a href="#url">
+                        <a href="_form.php">
                             <div class="box16">
                                 <div class="rentext-listing-category"><span>Buy</span><span>Rent</span></div>
                                 <img class="img-fluid" src="assets/images/p1.jpg" alt="">

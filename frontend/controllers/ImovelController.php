@@ -124,4 +124,17 @@ class ImovelController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionIndex2()
+    {
+        $model = Imovel::findOne(1);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Imovel::find(),
+            'pagination' => [
+                'pageSize' => 18,
+            ]
+        ]);
+
+        return $this->render('index2', ['dataProvider' => $dataProvider,'model' => $model ]);
+    }
 }

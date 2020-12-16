@@ -29,13 +29,13 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Happy house',
+        'brandImage' => 'assets/images/logohappyhouse.png',
         'brandUrl' => Yii::$app->homeUrl,
 
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Comprar', 'url' => ['/imovel/index']],
+        ['label' => 'Comprar', 'url' => ['/imovel/index2']],
         ['label' => 'Sobre', 'url' => ['/site/about']],
         ['label' => 'Contactos', 'url' => ['/site/contact']],
     ];
@@ -66,6 +66,7 @@ AppAsset::register($this);
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
+
 </div>
 
 

@@ -6,6 +6,12 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
 /* @var $form yii\widgets\ActiveForm */
+
+
+$this->title = 'form';
+$this->params['breadcrumbs'][] = ['label' => 'Imovels', 'url' => ['index2']];
+$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
 <div class="imovel-form">
@@ -43,3 +49,4 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
