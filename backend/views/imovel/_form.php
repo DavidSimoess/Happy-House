@@ -10,9 +10,9 @@ use yii\widgets\ActiveForm;
 
 <div class="imovel-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'estado')->dropDownList([1=>'Novo', 2=>'Usado', 3=>'Renovado']) ?>
+    <?= $form->field($model, 'estado')->dropDownList(['Novo', 'Usado', 'Renovado']) ?>
 
     <?= $form->field($model, 'area')->textInput() ?>
 
@@ -38,7 +38,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'longitude')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'imagem')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelImagem, 'imagem[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
 
     <?= $form->field($model, 'id_user')->textInput() ?>
 

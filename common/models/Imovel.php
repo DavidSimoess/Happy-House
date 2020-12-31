@@ -21,10 +21,10 @@ use yii;
  * @property string $cidade
  * @property float $latitude
  * @property float $longitude
- * @property string $imagem
  * @property int $id_user
  *
  * @property Aluguer[] $aluguers
+ * @property Imagens[] $imagens
  * @property User $user
  * @property Pedido[] $pedidos
  * @property Venda[] $vendas
@@ -45,11 +45,11 @@ class Imovel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['estado', 'area', 'n_quartos', 'n_wc', 'preco', 'descricao', 'garagem', 'piso', 'morada', 'codigo_postal', 'cidade', 'latitude', 'longitude', 'imagem', 'id_user'], 'required'],
+            [['estado', 'area', 'n_quartos', 'n_wc', 'preco', 'descricao', 'garagem', 'piso', 'morada', 'codigo_postal', 'cidade', 'latitude', 'longitude', 'id_user'], 'required'],
             [['area', 'n_quartos', 'n_wc', 'garagem', 'piso', 'id_user'], 'integer'],
             [['preco', 'latitude', 'longitude'], 'number'],
             [['estado'], 'string', 'max' => 50],
-            [['descricao', 'morada', 'imagem'], 'string', 'max' => 500],
+            [['descricao', 'morada'], 'string', 'max' => 500],
             [['codigo_postal'], 'string', 'max' => 8],
             [['cidade'], 'string', 'max' => 20],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
@@ -76,7 +76,6 @@ class Imovel extends \yii\db\ActiveRecord
             'cidade' => 'Cidade',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
-            'imagem' => 'Imagem',
             'id_user' => 'Id User',
         ];
     }
@@ -89,6 +88,16 @@ class Imovel extends \yii\db\ActiveRecord
     public function getAluguers()
     {
         return $this->hasMany(Aluguer::className(), ['id_imovel' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Imagens]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImagens()
+    {
+        return $this->hasMany(Imagens::className(), ['id_Imovel' => 'id']);
     }
 
     /**
