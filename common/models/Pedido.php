@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $estado
+ * @property string $data
  * @property int $id_user
  * @property int $id_imovel
  *
@@ -31,9 +32,10 @@ class Pedido extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['estado', 'id_user', 'id_imovel'], 'required'],
+            [['estado', 'data', 'id_user', 'id_imovel'], 'required'],
             [['id_user', 'id_imovel'], 'integer'],
             [['estado'], 'string', 'max' => 50],
+            [['data'], 'safe'],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
             [['id_imovel'], 'exist', 'skipOnError' => true, 'targetClass' => Imovel::className(), 'targetAttribute' => ['id_imovel' => 'id']],
         ];
@@ -47,6 +49,7 @@ class Pedido extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'estado' => 'Estado',
+            'data' => 'Data',
             'id_user' => 'Id User',
             'id_imovel' => 'Id Imovel',
         ];
