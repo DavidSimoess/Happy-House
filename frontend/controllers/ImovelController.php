@@ -52,8 +52,14 @@ class ImovelController extends Controller
      */
     public function actionView($id)
     {
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => Imovel::find(),
+        ]);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'dataProvider' => $dataProvider,
         ]);
     }
 

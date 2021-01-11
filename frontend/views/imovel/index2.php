@@ -30,10 +30,10 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 
 <div class="imovel-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <!--/<h1><?/*= Html::encode($this->title) */?></h1>-->
 
 
-    <?= GridView::widget([
+ <!--<?/*= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
@@ -69,7 +69,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                 ],
             ],
         ],
-    ]); ?>
+    ]); */?>-->
 
 
 </div>
@@ -96,14 +96,14 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                 <?php foreach ($dataProvider->models as $model) { ?>
                     <div class="col-lg-4 col-md-6 listing-img">
                         <a href="<?=Url::to(['view', 'id'=>$model->id])?>">
-                        <div class="box16">
-                            <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                            <div class="box-content">
-                                <h3 class="title">
-                                    <?= $model->preco ?>
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
+                                <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">
+                                        <?= $model->preco ?>
+                                </div>
                             </div>
-                        </div>
                         </a>
                         <div class="listing-details blog-details align-self">
                             <h4 class="user_title agent">
@@ -121,7 +121,10 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                                 </a>
                                 <ul class="blog-meta">
                                     <li>
-                                        <a href="#url">Laura Antiochus </a>
+                                        <?php $user = \common\models\User::findOne(['id'=>$model->id_user]); ?>
+                                        <span>
+                                            <?php echo $user->username?>
+                                        </span>
                                     </li>
                                     <li class="meta-item blog-lesson">
                                         <span class="meta-value"> Selling agent</span>
@@ -144,44 +147,37 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                 <div class="d-grid grid-col-4 grids-content">
                     <div class="column">
                         <a href="#url" class="link"><span class="fa fa-comments"></span></a>
-                        <a href="#url" class="title-small">Free consultation</a>
-                        <h4>Schedule a free consultation with our specialist.</h4>
-                        <a href="#buytheme" class="btn btn-style btn-primary"> Schedule now
+                        <a href="#url" class="title-small">Agende um encontro</a>
+                        <h4>Agende uma reunião com um dos nossos agentes.</h4>
+                        <a href="#buytheme" class="btn btn-style btn-primary"> Marque agora
                             <span class="fa fa-long-arrow-right ml-2"></span> </a>
                     </div>
                     <div class="column">
                         <a href="#url" class="link"><span class="fa fa-phone"></span></a>
-                        <a href="#url" class="title-small">help desk</a>
-                        <h4>Do you have questions or want more infomation? Call Now</h4>
+                        <a href="../site/about.php" class="title-small">Contactos</a>
+                        <h4>Tem alguma questão ou procura saber mais ? Contactenos</h4>
                         <a href="tel:+1-2345-678-11">
-                            <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+                            <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> 913 231 687
                             </p>
                         </a>
                     </div>
                     <div class="column mt-lg-0 mt-md-5">
-                        <h4 class="mb-1">Signup for newsletter</h4>
-                        <p>and get latest news and updates</p>
+                        <h4 class="mb-1">Junte-se a nós</h4>
+                        <p>e tem acesso a ultimas novidades</p>
                         <form action="#" class="subscribe-form mt-4" method="post">
                             <div class="form-group">
-                                <input type="email" name="subscribe" placeholder="Enter your email" required="">
-                                <button class="btn btn-style btn-primary">Subscribe</button>
+                                <button class="btn-about btn-style btn-primary mx-auto">Registe-se</button>
                             </div>
                         </form>
                         <ul class="footers-17_social">
-                            <h4 class="d-inline mr-4">Follow us</h4>
+                            <h4 class="d-inline mr-4">Siga-nos</h4>
                             <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
                             <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#url" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
                             <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="d-grid grid-col-3 grids-content1 bottom-border">
-                    <div class="columns copyright-grid align-self">
-                        <p class="copy-footer-29">© 2020 Estate sale. All rights reserved | Designed by <a
-                                    href="https://w3layouts.com">W3layouts</a></p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -190,6 +186,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
         &#10548;
     </button>
 
+    <!-- /move top -->
 </section>
 
 <!-- jQuery and Bootstrap JS -->

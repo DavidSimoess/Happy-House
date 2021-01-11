@@ -14,7 +14,7 @@ $this->title = 'About';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Estate sale - Real Estate Category Bootstrap Responsive Website Template - About : W3layouts</title>
+
 
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -49,19 +49,16 @@ $this->title = 'About';
                 <div class="col-lg-7 pl-lg-0">
                     <div class="w3l-right-info">
                         <h6 class="title-small">Sobre nós</h6>
-                        <h3 class="title-big">Our long-standing experience</h3>
-                        <h5 class="mt-4">We have over 15 year experience, Over 20,000 people work for us in more than 70
-                            countries all over the world.
-                            Lorem ipsum viverra feugiat dolor sit amet.
+                        <h3 class="title-big">A nossa experiência</h3>
+                        <h5 class="mt-4">Nós temos mais de 15 anos de experiencia, mais de 20,000 pessoas a trabalhar conosco em mais de 70 paises
+                            e queremos continuar a expandir o nosso negócio para continuar a adquirir mais colaboradores e acima de tudo
+                            oferecer aos nossos compradores os melhores negocios imobilíarios
                         </h5>
-                        <p class="mt-4">Viverra feugiat. Pellen tesque libero ut justo,
-                            ultrices in ligula. Semper at tempufddfel lorem ipsum. Lorem ipsum viverra feugiat dolor sit
-                            amet primis in faucibus orci.</p>
                         <a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
                             <span class="video-play-icon">
                                 <span class="fa fa-play"></span>
                             </span>
-                            See Our Story
+                            Veja a nossa história
                         </a>
                         <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
                         <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
@@ -103,13 +100,12 @@ $this->title = 'About';
                     </div>
                     <div class="col-lg-6 mt-lg-0 mt-5 align-self">
                         <h6 class="title-small">Poru</h6>
-                        <h3 class="title-big">To help members become more profitable and successful</h3>
+                        <h3 class="title-big">Para ajudar os membros a terem mais sucesso</h3>
                         <p class="mt-4">Somos uma empresa nova que conta com membros com grande ambição e empenho para conseguir corresponder as expectativas dos clientes.</p>
                         <ul class="w3l-right-book mt-lg-5 mt-4">
-                            <li><span class="fa fa-check" aria-hidden="true"></span>Help sellers get the most for their properties</li>
-                            <li><span class="fa fa-check" aria-hidden="true"></span>Help sellers price their properties fairly</li>
-                            <li><span class="fa fa-check" aria-hidden="true"></span>Help buyers find the property that fits their needs</li>
-                            <li><span class="fa fa-check" aria-hidden="true"></span>Avoid over paying by strategically negotiating purchase</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Ajuda os vendedores a obterem o maximo de lucro</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Ajuda os vendedores a obterem o preço mais apropriado ao seu imovel</li>
+                            <li><span class="fa fa-check" aria-hidden="true"></span>Ajuda os compradores a encontrar o imovel que lhes encaxa</li>
                         </ul>
                     </div>
                 </div>
@@ -147,7 +143,7 @@ $this->title = 'About';
                     <div class="users_box">
                         <div class="user-avatar">
                             <a href="#agent-single" class="avatar">
-                                <img src="assets/images/team3.jpg" alt="" class="img-fluid w-100 radius-image">
+                                <img src="assets/images/david.jpg" alt="" class="img-fluid w-100 radius-image">
                             </a>
                         </div>
                         <div class="users_box_info">
@@ -167,7 +163,7 @@ $this->title = 'About';
                     <div class="users_box">
                         <div class="user-avatar">
                             <a href="#agent-single" class="avatar">
-                                <img src="assets/images/team4.jpg" alt="" class="img-fluid w-100 radius-image">
+                                <img src="assets/images/team6.jpg" alt="" class="img-fluid w-100 radius-image">
                             </a>
                         </div>
                         <div class="users_box_info">

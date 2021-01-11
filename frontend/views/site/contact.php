@@ -19,8 +19,6 @@ $this->title = 'Contact';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Estate sale - Real Estate Category Bootstrap Responsive Website Template - Contact : W3layouts</title>
-
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -52,8 +50,8 @@ $this->title = 'Contact';
                     <div class="col-lg-8">
                         <div class="contact-form">
                             <h5 class="mb-2">Entra em contacto conosco!</h5>
-                            <p class="mb-4">Your email address will not be published. Required fields are marked *</p>
-                            <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="">
+                            <p class="mb-4">O seu email nao irá ser publicado.Preencha os campos marcados com *</p>
+                            <form action="" method="post" class="">
                                 <div class="form-grid">
                                     <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
 
