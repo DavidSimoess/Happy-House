@@ -1,0 +1,10 @@
+suite_namespace: frontend\tests\acceptance
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: http://localhost/happyhouse/frontend/web/index.php
+            window_size: maximize
+            browser: chrome
+        - Yii2:
+            part: init
