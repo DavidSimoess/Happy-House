@@ -72,7 +72,6 @@ use yii\widgets\DetailView;
 
 <body>
 
-<a href="<?=Url::to(['view', 'id'=>$model->id])?>">
 <header class="listing-header">
     <div class="listing-header-info">
         <h2 class="listing-title-h2">Casa - Lisboa</h2>
@@ -87,13 +86,20 @@ use yii\widgets\DetailView;
         <div class="flex-item">
             <figure class="listing-picture">
                 <picture>
+                    <!--<table>
+                        <tr>
 
+                            <?php /*foreach($modelImagem as $imagem){ var_dump($imagem);*/?>
+                                <td><?/*= Html::img('backend/web/imagens/'.$imagem->imagem);*/?></td>
+                            <?php /*}*/?>
+                        </tr>
+                    </table>-->
                 </picture>
             </figure>
         </div>
     </div>
     <div class="col-md-6 listing-info">
-        <?php foreach ($dataProvider->models as $model) { ?>
+        <?php /*foreach ($dataProvider->models as $model) { */?>
         <div class="row">
             <div class="col-md-12">
                 <div class="listing-top-info">
@@ -155,57 +161,10 @@ use yii\widgets\DetailView;
                 </div>
             </div>
         </div>
-        <?php } ?>
+        <?php /*} */?>
     </div>
 </div>
-<section class="w3l-footers-20">
-    <div class="footers20">
-        <div class="container">
-            <div class="footers20-content">
-                <div class="d-grid grid-col-4 grids-content">
-                    <div class="column">
-                        <a href="#url" class="link"><span class="fa fa-comments"></span></a>
-                        <a href="#url" class="title-small">Agende um encontro</a>
-                        <h4>Agende uma reunião com um dos nossos agentes.</h4>
-                        <a href="#buytheme" class="btn-about btn-style btn-primary"> Marque agora
-                            <span class="fa fa-long-arrow-right ml-2"></span> </a>
-                    </div>
-                    <div class="column">
-                        <a href="#url" class="link"><span class="fa fa-phone"></span></a>
-                        <a href="http://localhost/Happy-House/frontend/web/index.php?r=site%2Fcontact" class="title-small">Contactos</a>
-                        <h4>Tem alguma questão ou procura saber mais ? Contactenos</h4>
-                        <a href="tel:+1-2345-678-11">
-                            <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> 913 231 687
-                            </p>
-                        </a>
-                    </div>
-                    <div class="column mt-lg-0 mt-md-5">
-                        <h4 class="mb-1">Junte-se a nós</h4>
-                        <p>e tem acesso a ultimas novidades</p>
-                        <form action="#" class="subscribe-form mt-4" method="post">
-                            <div class="form-group">
-                                <button class="btn-about btn-style btn-primary mx-auto">Registe-se</button>
-                            </div>
-                        </form>
-                        <ul class="footers-17_social">
-                            <h4 class="d-inline mr-4">Siga-nos</h4>
-                            <li><a href="#url" class="twitter"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#url" class="facebook"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#url" class="instagram"><span class="fa fa-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- move top -->
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-        &#10548;
-    </button>
-
-    <!-- /move top -->
-</section>
+<br><br><br><br><br>
 </body>
 </a>
 </html>

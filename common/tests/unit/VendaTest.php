@@ -17,7 +17,7 @@ class VendaTest extends \Codeception\Test\Unit
     {
     }
 
-    public function testValidacoes(){
+    /*public function testValidacoes(){
         $venda = new Venda();
 
         $venda->preco = 'gyhuefyhuyhuhuidhuidfuidhfdhufsdihdifsuifhisdhfsdifsuifhsdfhihfsdfhsifisf';
@@ -27,7 +27,7 @@ class VendaTest extends \Codeception\Test\Unit
         $this->tester->assertTrue($venda->validate('preco'));
 
 
-    }
+    }*/
 
     public function testCreateVenda()
     {
@@ -38,7 +38,7 @@ class VendaTest extends \Codeception\Test\Unit
         $this->tester->seeInDatabase('venda', ['preco' => 999999]);
     }
 
-    public function testUpdateVenda()
+    /*public function testUpdateVenda()
     {
         $pedido = $this->tester->grabRecord('app\models\Venda', ['preco' => 999999]);
 
@@ -57,5 +57,5 @@ class VendaTest extends \Codeception\Test\Unit
         $pedido->delete();
 
         $this->tester->dontSeeRecord('app\models\Venda', ['preco' => 888888]);
-    }
+    }*/
 }

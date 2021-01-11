@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '0364a4ef7d6b2e32f3113feb22a2abe4b6ca2c63',
+    'reference' => 'b3c5fd2245a0fab87ad193998b647ae17bf5f11d',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '0364a4ef7d6b2e32f3113feb22a2abe4b6ca2c63',
+      'reference' => 'b3c5fd2245a0fab87ad193998b647ae17bf5f11d',
     ),
     'behat/gherkin' => 
     array (
@@ -56,6 +56,15 @@
       ),
       'reference' => '8c8076cd05d4db95798acd7dba2a56578210982c',
     ),
+    'codeception/module-webdriver' => 
+    array (
+      'pretty_version' => '1.1.4',
+      'version' => '1.1.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f719edc1eca033e0dc5fd8d99db122070b1fb933',
+    ),
     'codeception/phpunit-wrapper' => 
     array (
       'pretty_version' => '7.8.2',
@@ -82,6 +91,13 @@
       array (
       ),
       'reference' => 'd56bf6102915de5702778fe20f2de3b2fe570b5b',
+    ),
+    'facebook/webdriver' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '*',
+      ),
     ),
     'guzzlehttp/psr7' => 
     array (
@@ -122,6 +138,15 @@
       array (
       ),
       'reference' => '45a2ec53a73c70ce41d55cedef9063630abaf1b6',
+    ),
+    'php-webdriver/webdriver' => 
+    array (
+      'pretty_version' => '1.9.0',
+      'version' => '1.9.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e3633154554605274cc9d59837f55a7427d72003',
     ),
     'phpdocumentor/reflection-common' => 
     array (
@@ -447,6 +472,15 @@
       array (
       ),
       'reference' => 'dc3063ba22c2a1fd2f45ed856374d79114998f91',
+    ),
+    'symfony/process' => 
+    array (
+      'pretty_version' => 'v4.4.18',
+      'version' => '4.4.18.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '075316ff72233ce3d04a9743414292e834f2cb4a',
     ),
     'symfony/service-contracts' => 
     array (

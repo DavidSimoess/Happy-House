@@ -30,7 +30,7 @@ AppAsset::register($this);
     <?php
     NavBar::begin([
         'brandLabel' => 'Happy house',
-        'brandUrl' => ['/user/index'],
+        //'brandUrl' => ['/user/index'],
 
     ]);
     $menuItems = [

@@ -55,12 +55,12 @@ class UserTest extends \Codeception\Test\Unit
         $user->nif = 123456789;
         $user->favoritos = NULL;
         $user->email = 'testeUser@gmail.com';
-        $user->setPassword('12345678');
+        $user->setPassword('123456789');
         $user->status = 10;
         $user->save();
         $this->tester->seeInDatabase('user', ['username' => 'testeUser']);
     }
-
+/*
     public function testUpdateUser()
     {
         $user = $this->tester->grabRecord('app\models\User', ['username' => 'testeUser']);
@@ -81,5 +81,5 @@ class UserTest extends \Codeception\Test\Unit
         $user->delete();
 
         $this->tester->dontSeeRecord('app\models\User', ['nome' => 'Olga']);
-    }
+    }*/
 }

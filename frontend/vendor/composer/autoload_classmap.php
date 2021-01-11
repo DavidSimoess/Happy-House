@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+    'Codeception\\Exception\\ConnectionException' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Exception/ConnectionException.php',
     'Codeception\\Lib\\DbPopulator' => $vendorDir . '/codeception/module-db/src/Codeception/Lib/DbPopulator.php',
     'Codeception\\Lib\\Driver\\Db' => $vendorDir . '/codeception/module-db/src/Codeception/Lib/Driver/Db.php',
     'Codeception\\Lib\\Driver\\MySql' => $vendorDir . '/codeception/module-db/src/Codeception/Lib/Driver/MySql.php',
@@ -15,7 +16,10 @@ return array(
     'Codeception\\Lib\\Driver\\SqlSrv' => $vendorDir . '/codeception/module-db/src/Codeception/Lib/Driver/SqlSrv.php',
     'Codeception\\Lib\\Driver\\Sqlite' => $vendorDir . '/codeception/module-db/src/Codeception/Lib/Driver/Sqlite.php',
     'Codeception\\Lib\\Interfaces\\Db' => $vendorDir . '/codeception/module-db/src/Codeception/Lib/Interfaces/Db.php',
+    'Codeception\\Lib\\Interfaces\\ScreenshotSaver' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Lib/Interfaces/ScreenshotSaver.php',
+    'Codeception\\Lib\\Interfaces\\SessionSnapshot' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Lib/Interfaces/SessionSnapshot.php',
     'Codeception\\Module\\Db' => $vendorDir . '/codeception/module-db/src/Codeception/Module/Db.php',
+    'Codeception\\Module\\WebDriver' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Module/WebDriver.php',
     'Codeception\\Util\\Shared\\Asserts' => $vendorDir . '/codeception/lib-asserts/src/Codeception/Util/Shared/Asserts.php',
     'Codeception\\Util\\Shared\\InheritedAsserts' => $vendorDir . '/codeception/lib-asserts/src/Codeception/Util/Shared/InheritedAsserts.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

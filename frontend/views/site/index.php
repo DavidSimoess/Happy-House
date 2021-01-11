@@ -176,7 +176,7 @@ $this->title = 'My Yii Application';
                         <span class="fa fa-home"></span>
                         <h4><a href="about.php" class="title-head">Garantia Happy House</a></h4>
                         <p>Uma garantia oferecida pela Happy House que garante ao comprador reparações no imóvel em caso de necessidade.</p>
-                        <a href="http://localhost/Happy-House/frontend/web/index.php?r=site%2Fabout" class="more">Saiba mais  <span class="fa fa-long-arrow-right"></span> </a>
+                        <a href="http://localhost/happyhouse/frontend/web/index.php?r=site%2Fabout" class="more">Saiba mais  <span class="fa fa-long-arrow-right"></span> </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">

@@ -164,7 +164,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                     <div class="column mt-lg-0 mt-md-5">
                         <h4 class="mb-1">Junte-se a nós</h4>
                         <p>e tem acesso a ultimas novidades</p>
-                        <form action="#" class="subscribe-form mt-4" method="post">
+                        <form action="../web/index.php?r=site%2Fsignup" class="subscribe-form mt-4" method="post">
                             <div class="form-group">
                                 <button class="btn-about btn-style btn-primary mx-auto">Registe-se</button>
                             </div>

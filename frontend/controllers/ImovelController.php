@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Imagens;
 use Yii;
 use common\models\Imovel;
 use yii\data\ActiveDataProvider;
@@ -57,9 +58,12 @@ class ImovelController extends Controller
             'query' => Imovel::find(),
         ]);
 
+        $modelImagem = $this->findModelImagem($id);
+
         return $this->render('view', [
             'model' => $this->findModel($id),
             'dataProvider' => $dataProvider,
+            'modelImagem' => $modelImagem,
         ]);
     }
 
@@ -142,5 +146,15 @@ class ImovelController extends Controller
         ]);
 
         return $this->render('index2', ['dataProvider' => $dataProvider,'model' => $model ]);
+    }
+
+    protected function findModelImagem($idImovel)
+    {
+        $modelImagem = Imagens::findAll(['id_Imovel' => $idImovel]);
+        //var_dump($modelImagem);
+        //die();
+        return $modelImagem;
+
+
     }
 }
