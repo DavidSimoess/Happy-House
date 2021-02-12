@@ -14,6 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'estado')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'data')->textInput(['placeholder' => "Ex: YYYY/MM/DD HH:MM:SS"]) ?>
+
     <?= $form->field($model, 'id_user')->textInput() ?>
 
     <?= $form->field($model, 'id_imovel')->textInput() ?>

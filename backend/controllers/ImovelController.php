@@ -54,8 +54,16 @@ class ImovelController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id); //Imovel
+
+        //Imagens daquele id
+        $modelImagem = $this->findModelImagem($id);
+
+        //var_dump($modelImagem); die();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'modelImagem' => $modelImagem,
         ]);
     }
 
@@ -68,6 +76,7 @@ class ImovelController extends Controller
     {
         $model = new Imovel();
         $modelImagem = new Imagens();
+
         if ($model->load(Yii::$app->request->post())) {
             $model->save();
             $imageFile = UploadedFile::getInstances($modelImagem, 'imagem');
@@ -138,9 +147,17 @@ class ImovelController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModelImagem($id)->delete;
+        $imagens = $this->findModelImagem($id);
 
-        $this->findModel($id)->delete();
+        if (count($imagens) != 0){
+            foreach ($imagens as $imagem){
+                $imagem->delete();
+            }
+        }
+
+        $model = $this->findModel($id);
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }

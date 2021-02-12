@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Pedido */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Pedidos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => '/Pedidos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '/'.$this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="pedido-view">
@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'estado',
+            'data',
             'id_user',
             'id_imovel',
         ],

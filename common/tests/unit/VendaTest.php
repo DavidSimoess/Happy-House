@@ -17,7 +17,7 @@ class VendaTest extends \Codeception\Test\Unit
     {
     }
 
-    /*public function testValidacoes(){
+    public function testValidacoes(){
         $venda = new Venda();
 
         $venda->preco = 'gyhuefyhuyhuhuidhuidfuidhfdhufsdihdifsuifhisdhfsdifsuifhsdfhihfsdfhsifisf';
@@ -27,7 +27,7 @@ class VendaTest extends \Codeception\Test\Unit
         $this->tester->assertTrue($venda->validate('preco'));
 
 
-    }*/
+    }
 
     public function testCreateVenda()
     {

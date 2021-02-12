@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Imovel */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Imovels', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => '/Imovels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '/'.$this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="imovel-view">
@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+
 
     <?= DetailView::widget([
         'model' => $model,
@@ -43,9 +44,31 @@ $this->params['breadcrumbs'][] = $this->title;
             'cidade',
             'latitude',
             'longitude',
-            'imagem',
+            //'imagem',
             'id_user',
+
         ],
-    ]) ?>
+    ])
+    ?>
+
+    <?php echo DetailView::widget([
+        'model' => $modelImagem,
+        'attributes' => [
+
+            [
+                    'attribute' => 'imagem',
+                    'format' => 'raw',
+                    'value' => function($modelImagem){
+                                $img = '';
+                                foreach ($modelImagem as $imagem){
+
+                                    $img = $img.Html::img('imagens/'.$imagem->imagem,['alt' => 'image','width'=>'100','height'=>'100']);
+                                }
+                                return $img;
+                    },
+            ],
+        ],
+    ])
+    ?>
 
 </div>

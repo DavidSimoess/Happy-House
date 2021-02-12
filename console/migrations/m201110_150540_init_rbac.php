@@ -24,7 +24,10 @@ class m201110_150540_init_rbac extends Migration
         // add "author" role and give this role the "createPost" permission
         $author = $auth->createRole('author');
         $auth->add($author);
-        $auth->addChild($author, $createPost);
+        //$auth->addChild($author, $createPost);
+
+        $agente = $auth->createRole('agente');
+        $auth->add($agente);
 
         // add "admin" role and give this role the "updatePost" permission
         // as well as the permissions of the "author" role
@@ -37,6 +40,7 @@ class m201110_150540_init_rbac extends Migration
         // usually implemented in your User model.
         $auth->assign($author, 2);
         $auth->assign($admin, 1);
+        $auth->assign($agente, 3);
     }
 
     public function down()

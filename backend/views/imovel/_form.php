@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'estado')->dropDownList(['Novo', 'Usado', 'Renovado']) ?>
+    <?= $form->field($model, 'estado')->dropDownList(['Novo' => 'Novo', 'Usado' => 'Usado', 'Renovado' => 'Renovado']) ?>
 
     <?= $form->field($model, 'area')->textInput() ?>
 

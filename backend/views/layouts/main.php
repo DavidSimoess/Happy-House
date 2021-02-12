@@ -9,6 +9,7 @@ use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use common\models\User;
 
 AppAsset::register($this);
 ?>
@@ -39,19 +40,34 @@ AppAsset::register($this);
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = ['label' => 'Gestão de Utilizadores', 'url' => ['/user/index']];
-        $menuItems[] = ['label' => 'Gestão de Imóveis', 'url' => ['/imovel/index']];
-        $menuItems[] = ['label' => 'Gestão de Pedidos', 'url' => ['/pedido/index']];
-        $menuItems[] = ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']];
-        $menuItems[] = ['label' => 'Gestão de Alugueres', 'url' => ['/aluguer/index']];
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
+        if(Yii::$app->getUser()->identity->role == 15){
+            $menuItems[] = ['label' => 'Gestão de Imóveis', 'url' => ['/imovel/index']];
+            $menuItems[] = ['label' => 'Gestão de Pedidos', 'url' => ['/pedido/index']];
+            $menuItems[] = ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']];
+            $menuItems[] = ['label' => 'Gestão de Alugueres', 'url' => ['/aluguer/index']];
+            $menuItems[] = '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>';
+        } else {
+            $menuItems[] = ['label' => 'Gestão de Utilizadores', 'url' => ['/user/index']];
+            $menuItems[] = ['label' => 'Gestão de Imóveis', 'url' => ['/imovel/index']];
+            $menuItems[] = ['label' => 'Gestão de Pedidos', 'url' => ['/pedido/index']];
+            $menuItems[] = ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']];
+            $menuItems[] = ['label' => 'Gestão de Alugueres', 'url' => ['/aluguer/index']];
+            $menuItems[] = '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>';
+        }
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],

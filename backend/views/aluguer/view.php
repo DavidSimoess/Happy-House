@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Aluguer */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Aluguers', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => '/Aluguers', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '/'.$this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="aluguer-view">

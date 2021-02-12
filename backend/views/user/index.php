@@ -8,7 +8,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Users';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = '/'.$this->title;
 ?>
 <div class="user-index">
 
@@ -52,7 +52,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a('', $url, ['class' => 'fa fa-fw fa-edit']);
                     },
                     'delete'=>function ($url) {
-                        return Html::a('', $url, ['class' => 'fa fa-fw fa-trash']);
+                        return Html::a('', $url, ['class' => 'fa fa-fw fa-trash',
+                            'data' => [
+                                'confirm' => 'Are you sure you want to delete this item?',
+                                'method' => 'post',
+                            ],
+                        ]);
                     },
                 ],
             ],

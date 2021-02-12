@@ -8,7 +8,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Imovels';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = '/'.$this->title;
 ?>
 <div class="imovel-index">
 
@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Imovel', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+   <!-- --><?php /*var_dump($dataProvider); die();*/?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -53,8 +54,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     'update'=>function ($url) {
                         return Html::a('', $url, ['class' => 'fa fa-fw fa-edit']);
                     },
-                    'delete'=>function ($url) {
-                        return Html::a('', $url, ['class' => 'fa fa-fw fa-trash']);
+                    'delete'=>function ($url, $model) {
+                        return Html::a('', ['delete', 'id' => $model->id], ['class' => 'fa fa-fw fa-trash',
+                            'data' => [
+                                'confirm' => 'Are you sure you want to delete this item?',
+                                'method' => 'post',
+                            ],
+                        ]);
                     },
                 ],
             ],

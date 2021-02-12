@@ -36,6 +36,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     const ROLE_USER = 10;
     const ROLE_ADMIN = 20;
+    const ROLE_AGENTE = 15;
 
     /**
      * {@inheritdoc}
@@ -68,7 +69,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
             ['role', 'default', 'value' => 10],
-            ['role', 'in', 'range' => [self::ROLE_USER, self::ROLE_ADMIN]],
+            ['role', 'in', 'range' => [self::ROLE_USER, self::ROLE_ADMIN, self::ROLE_AGENTE]],
         ];
     }
 
@@ -270,6 +271,18 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public static function isUserAdmin($username)
     {
         if (static::findOne(['username' => $username, 'role' => self::ROLE_ADMIN])){
+
+            return true;
+        } else {
+
+            return false;
+        }
+
+    }
+
+    public static function isUserAgente($username)
+    {
+        if (static::findOne(['username' => $username, 'role' => self::ROLE_AGENTE])){
 
             return true;
         } else {

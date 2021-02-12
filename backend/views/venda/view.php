@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Venda */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Vendas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => '/Vendas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '/'.$this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="venda-view">

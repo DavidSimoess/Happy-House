@@ -33,9 +33,9 @@ class Pedido extends \yii\db\ActiveRecord
     {
         return [
             [['estado', 'data', 'id_user', 'id_imovel'], 'required'],
+            [['data'], 'safe'],
             [['id_user', 'id_imovel'], 'integer'],
             [['estado'], 'string', 'max' => 50],
-            [['data'], 'safe'],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
             [['id_imovel'], 'exist', 'skipOnError' => true, 'targetClass' => Imovel::className(), 'targetAttribute' => ['id_imovel' => 'id']],
         ];

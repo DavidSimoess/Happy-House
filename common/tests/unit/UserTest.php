@@ -18,7 +18,7 @@ class UserTest extends \Codeception\Test\Unit
     }
 
 
-    /*public function testValidacoes(){
+    public function testValidacoes(){
         $user = new User();
 
         $user->username = 'gsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeggsegsegsgesgegesggsegegsgsgegeg';
@@ -44,7 +44,7 @@ class UserTest extends \Codeception\Test\Unit
 
         $user->email = 'testeewfgefgwef@gmail.com';
         $this->tester->assertTrue($user->validate('email'));
-    }*/
+    }
 
     // tests
     public function testCreateUser()
@@ -60,7 +60,7 @@ class UserTest extends \Codeception\Test\Unit
         $user->save();
         $this->tester->seeInDatabase('user', ['username' => 'testeUser']);
     }
-/*
+
     public function testUpdateUser()
     {
         $user = $this->tester->grabRecord('app\models\User', ['username' => 'testeUser']);
@@ -81,5 +81,5 @@ class UserTest extends \Codeception\Test\Unit
         $user->delete();
 
         $this->tester->dontSeeRecord('app\models\User', ['nome' => 'Olga']);
-    }*/
+    }
 }
