@@ -3,8 +3,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://localhost/happyhouse/frontend/web/index.php
-            window_size: maximize
+            url: http://localhost/Happy-House/frontend/web/index.php
+            window_size: fullscreen
             browser: chrome
         - Yii2:
             part: init

@@ -133,29 +133,6 @@ $this->title = 'About';
                             <div class="user_meta user_phone">
                                 <span class="phone-detail"> <a href="tel:+1-2345-678-11">915851389</a></span>
                             </div>
-
-                            <a href="#agent-single" class="btn btn-outline-primary btn-style mt-4">
-                                Ver perfil </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 column-item mt-lg-0 mt-5 mx-auto">
-                    <div class="users_box">
-                        <div class="user-avatar">
-                            <a href="#agent-single" class="avatar">
-                                <img src="assets/images/david.jpg" alt="" class="img-fluid w-100 radius-image">
-                            </a>
-                        </div>
-                        <div class="users_box_info">
-                            <p class="user_position">Agente Imobiliario</p>
-                            <h4 class="user_title agent">
-                                <a href="#agent-single">David Simões</a>
-                            </h4>
-                            <div class="user_meta user_phone">
-                                <span class="phone-detail"> <a href="tel:+1-2345-678-11">938733247</a></span>
-                            </div>
-                            <a href="#agent-single" class="btn btn-outline-primary btn-style mt-4">
-                               Ver Perfil </a>
                         </div>
                     </div>
                 </div>
@@ -169,14 +146,11 @@ $this->title = 'About';
                         <div class="users_box_info">
                             <p class="user_position">Agente Imobiliario</p>
                             <h4 class="user_title agent">
-                                <a href="#agent-single">André Nunes</a>
+                                <a href="#agent-single">David Simões</a>
                             </h4>
                             <div class="user_meta user_phone">
-                                <span class="phone-detail"> <a href="tel:+1-2345-678-11">913434257</a></span>
+                                <span class="phone-detail"> <a href="tel:+1-2345-678-11">938733247</a></span>
                             </div>
-
-                            <a href="#agent-single" class="btn btn-outline-primary btn-style mt-4">
-                               Ver perfil </a>
                         </div>
                     </div>
                 </div>

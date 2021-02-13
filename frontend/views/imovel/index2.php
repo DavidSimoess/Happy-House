@@ -5,10 +5,11 @@ use yii\grid\GridView;
 use yii\helpers\Url;
 
 rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
-
+/* @var $modelUser common\models\User */
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $model common\models\Imovel */
+/* @var $modelPedido common\models\Pedido */
 
 
 ?>
@@ -101,19 +102,19 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                                 <img class="img-fluid" src="assets/images/p1.jpg" alt="">
                                 <div class="box-content">
                                     <h3 class="title">
-                                        <?= $model->preco ?>
+                                        <?= $model->preco,'€' ?>
                                 </div>
                             </div>
                         </a>
                         <div class="listing-details blog-details align-self">
                             <h4 class="user_title agent">
-                                <a href="#url">Cottage villa</a>
+                                <a href="#url"><?= $model->morada ?></a>
                             </h4>
                             <p class="user_position"><?= $model->cidade ?></p>
                             <ul class="mt-3 estate-info">
                                 <li><span class="fa fa-bed"></span> <?= $model->estado ?></li>
-                                <li><span class="fa fa-shower"></span> 2 Baths</li>
-                                <li><span class="fa fa-share-square-o"></span> 1760 Sqft</li>
+                                <li><span class="fa fa-shower"></span><?= $model->n_wc ?> </li>
+                                <li><span class="fa fa-share-square-o"></span><?= $model->area ,'m2'?></li>
                             </ul>
                             <div class="author align-items-center mt-4">
                                 <a href="#img" class="comment-img">
@@ -121,13 +122,11 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                                 </a>
                                 <ul class="blog-meta">
                                     <li>
-                                        <?php $user = \common\models\User::findOne(['id'=>$model->id_user]); ?>
                                         <span>
-                                            <?php echo $user->username?>
                                         </span>
                                     </li>
                                     <li class="meta-item blog-lesson">
-                                        <span class="meta-value"> Selling agent</span>
+                                        <span class="meta-value">Agente Vendedor</span>
                                     </li>
                                 </ul>
                             </div>
