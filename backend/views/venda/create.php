@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model common\models\Venda */
 
 $this->title = 'Create Venda';
-$this->params['breadcrumbs'][] = ['label' => 'Vendas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => '/Vendas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '/'.$this->title;
 ?>
 <div class="venda-create">
 

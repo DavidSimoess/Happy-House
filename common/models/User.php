@@ -20,9 +20,11 @@ use yii\web\IdentityInterface;
  * @property string|null $password_reset_token
  * @property string $email
  * @property int $status
+ * @property int $role
  * @property int $created_at
  * @property int $updated_at
  * @property string|null $verification_token
+ * @property string|null $imagem
  *
  * @property Imovel[] $imovels
  * @property Pedido[] $pedidos
@@ -60,8 +62,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
              [['username', 'telemovel', 'nif', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-             [['telemovel', 'nif', 'favoritos', 'status', 'created_at', 'updated_at'], 'integer'],
-             [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
+             [['telemovel', 'nif', 'favoritos', 'status', 'role', 'created_at', 'updated_at'], 'integer'],
+             [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token', 'imagem'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
@@ -93,6 +95,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'verification_token' => 'Verification Token',
+            'imagem' => 'Imagem',
         ];
     }
 

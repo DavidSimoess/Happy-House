@@ -75,9 +75,11 @@ use yii\widgets\DetailView;
 <header class="listing-header">
     <div class="listing-header-info">
         <h2 class="listing-title-h2">Casa - Lisboa</h2>
+        <?php if(!Yii::$app->user->isGuest){ ?>
         <div class="action-buttons-agente">
             <button class="contact-agent-btn-agente">Contactar agente </button>
         </div>
+        <?php }?>
     </div>
 
 </header>

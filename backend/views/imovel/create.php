@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model common\models\Imovel */
 
 $this->title = 'Create Imovel';
-$this->params['breadcrumbs'][] = ['label' => 'Imovels', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => '/Imovels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = '/'.$this->title;
 ?>
 <div class="imovel-create">
 
