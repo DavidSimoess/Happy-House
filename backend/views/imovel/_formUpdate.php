@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $imagem common\models\Imagens */
+
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
 /* @var $form yii\widgets\ActiveForm */
@@ -42,6 +42,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($imagem, 'imagem[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?>
     <table>
     <?php
+
         foreach($modelImagem as $imagem){
             //echo $imagem->imagem;?>
            <tr>

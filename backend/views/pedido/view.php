@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = '/'.$this->title;
             'id',
             'estado',
             'data',
+            'mensagem',
             'id_user',
             'id_imovel',
         ],

@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
+/* @var $modelImagem common\models\Imagens */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => '/Users', 'url' => ['index']];
@@ -46,4 +47,23 @@ $this->params['breadcrumbs'][] = '/'.$this->title;
         ],
     ]) ?>
 
+    <?php echo DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+
+            [
+                'attribute' => 'imagem',
+                'format' => 'raw',
+                'value' => function($model){
+                    $img = '';
+
+                    $img = $img.Html::img('imagens/'.$model->imagem,['alt' => 'image','width'=>'100','height'=>'100']);
+
+
+                    return $img;
+                },
+            ],
+        ],
+    ])
+    ?>
 </div>

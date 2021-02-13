@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'preco')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'data_venda')->textInput() ?>
+    <?= $form->field($model, 'data_venda')->textInput(['placeholder' => "Ex: YYYY/MM/DD HH:MM:SS"]) ?>
 
     <?= $form->field($model, 'id_imovel')->textInput() ?>
 

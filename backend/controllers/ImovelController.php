@@ -64,6 +64,7 @@ class ImovelController extends Controller
         return $this->render('view', [
             'model' => $model,
             'modelImagem' => $modelImagem,
+
         ]);
     }
 
@@ -89,7 +90,7 @@ class ImovelController extends Controller
                     $modelImagens = new Imagens();
                     $modelImagens->id_Imovel = $model->id;
                     //$i++;
-                    var_dump($modelImagens);
+                    //var_dump($modelImagens);
                     //die();
                     $file->saveAs('imagens/'.$file->baseName.'.'.$file->extension);
                     $modelImagens->imagem = $file->baseName.'.'.$file->extension;
@@ -127,7 +128,18 @@ class ImovelController extends Controller
 
         $imagem = new Imagens();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
+            $imageFile = UploadedFile::getInstances($imagem, 'imagem');
+
+            foreach ($imageFile as $file) {
+                $imagem = new Imagens();
+                $imagem->id_Imovel = $model->id;
+                $file->saveAs('imagens/' . $file->baseName . '.' . $file->extension);
+                $imagem->imagem = $file->baseName . '.' . $file->extension;
+                $imagem->save(false);
+            }
+
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

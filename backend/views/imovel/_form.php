@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-/* @var $modelImagem common\models\Imagens */
+
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
 /* @var $form yii\widgets\ActiveForm */

@@ -12,9 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'estado')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'estado')->textInput() ?>
 
     <?= $form->field($model, 'data')->textInput(['placeholder' => "Ex: YYYY/MM/DD HH:MM:SS"]) ?>
+
+    <?= $form->field($model, 'estado')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'id_user')->textInput() ?>
 

@@ -5,6 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
+/* @var $modelImagem common\models\Imagens */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => '/Imovels', 'url' => ['index']];
@@ -50,7 +51,6 @@ $this->params['breadcrumbs'][] = '/'.$this->title;
         ],
     ])
     ?>
-
     <?php echo DetailView::widget([
         'model' => $modelImagem,
         'attributes' => [
@@ -69,6 +69,7 @@ $this->params['breadcrumbs'][] = '/'.$this->title;
             ],
         ],
     ])
-    ?>
+?>
+
 
 </div>

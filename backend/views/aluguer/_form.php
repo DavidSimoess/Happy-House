@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'data_inicio')->textInput() ?>
+    <?= $form->field($model, 'data_inicio')->textInput(['placeholder' => "Ex: YYYY/MM/DD HH:MM:SS"]) ?>
 
-    <?= $form->field($model, 'data_fim')->textInput() ?>
+    <?= $form->field($model, 'data_fim')->textInput(['placeholder' => "Ex: YYYY/MM/DD HH:MM:SS"]) ?>
 
     <?= $form->field($model, 'preco')->textInput(['maxlength' => true]) ?>
 
