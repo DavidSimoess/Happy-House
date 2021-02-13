@@ -38,6 +38,8 @@ AppAsset::register($this);
         ['label' => 'Comprar', 'url' => ['/imovel/index2']],
         ['label' => 'Sobre', 'url' => ['/site/about']],
         ['label' => 'Contactos', 'url' => ['/site/contact']],
+
+
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];

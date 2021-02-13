@@ -14,7 +14,6 @@ class ContactForm extends Model
     public $email;
     public $assunto;
     public $mensagem;
-    public $verificacao;
 
 
     /**
@@ -27,8 +26,7 @@ class ContactForm extends Model
             [['nome', 'email', 'assunto', 'mensagem'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
-            // verifyCode needs to be entered correctly
-            ['verificacao', 'captcha'],
+
         ];
     }
 

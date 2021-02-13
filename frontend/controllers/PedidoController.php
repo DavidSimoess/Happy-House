@@ -6,6 +6,7 @@ use Yii;
 use common\models\Pedido;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
+use frontend\models\PedidoForm;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -64,15 +65,12 @@ class PedidoController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Pedido();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $model = new PedidoForm();
+        if ($model->load(Yii::$app->request->post()) && $model->enviarPedido()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->render('create', ['model' => $model,]);
     }
 
     /**

@@ -21,3 +21,4 @@ class TesteAceitacaoCest
         $I->see('Logout (admin)');
     }
 }
+

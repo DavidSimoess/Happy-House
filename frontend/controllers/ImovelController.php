@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Imagens;
+use frontend\models\PedidoForm;
 use Yii;
 use common\models\Imovel;
 use yii\data\ActiveDataProvider;
@@ -51,6 +52,7 @@ class ImovelController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+
     public function actionView($id)
     {
 
@@ -58,12 +60,20 @@ class ImovelController extends Controller
             'query' => Imovel::find(),
         ]);
 
+
+
         $modelImagem = $this->findModelImagem($id);
+        $modelPedido = new PedidoForm();
+
+        if ( $modelPedido->load(Yii::$app->request->post()) &&  $modelPedido->enviarPedido($id)) {
+            Yii::$app->session->setFlash('success', 'Enviado com sucesso!');
+        }
 
         return $this->render('view', [
             'model' => $this->findModel($id),
             'dataProvider' => $dataProvider,
             'modelImagem' => $modelImagem,
+            'modelPedido' => $modelPedido,
         ]);
     }
 
@@ -156,5 +166,17 @@ class ImovelController extends Controller
         return $modelImagem;
 
 
+    }
+
+    public function actionEnviarPedido($id)
+    {
+
+        $modelPedido = new PedidoForm();
+        if ( $modelPedido->load(Yii::$app->request->post()) &&  $modelPedido->enviarPedido($id)) {
+            Yii::$app->session->setFlash('success', 'Enviado com sucesso!');
+
+        }
+
+        return  $modelPedido;
     }
 }

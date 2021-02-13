@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
+/* @var $imagem common\models\Imagens */
 
 $this->title = 'Update Imovel: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => '/Imovels', 'url' => ['index']];

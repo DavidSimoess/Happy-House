@@ -10,7 +10,7 @@ class tabsCest
     // tests
     public function tryToTest(FunctionalTester $I)
     {
-        $I->amOnPage('http://localhost/happyhouse/frontend/web/index.php?r=site%2Findex');
+        $I->amOnPage('http://localhost/Happy-House/frontend/web/index.php?r=site%2Findex');
         $I->see('Encontre uma casa hoje!');
         $I->click('Comprar');
         $I->see('Agende uma reunião com um dos nossos agentes.');

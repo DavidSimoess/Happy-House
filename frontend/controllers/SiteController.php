@@ -31,7 +31,7 @@ class SiteController extends Controller
             'only' => ['logout', 'signup'],
             'rules' => [
                 [
-                    'actions' => ['signup','about'],
+                    'actions' => ['signup'],
                     'allow' => true,
                     'roles' => ['?'],
                 ],
@@ -61,10 +61,7 @@ class SiteController extends Controller
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
+
         ];
     }
 

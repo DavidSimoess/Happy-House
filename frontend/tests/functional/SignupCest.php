@@ -18,16 +18,16 @@ class SignupCest
     public function signupSuccessfully(FunctionalTester $I)
     {
         $I->submitForm($this->formId, [
-            'SignupForm[username]' => 'Teste',
-            'SignupForm[email]' => 'teste@gmail.com',
+            'SignupForm[username]' => 'Teste5',
+            'SignupForm[email]' => 'teste5@gmail.com',
             'SignupForm[password]' => 123456789,
             'SignupForm[telemovel]' => 912345678,
             'SignupForm[nif]' => 456123789,
         ]);
 
         $I->seeRecord('common\models\User', [
-            'username' => 'Teste',
-            'email' => 'teste@gmail.com',
+            'username' => 'Teste5',
+            'email' => 'teste5@gmail.com',
         ]);
 
     }

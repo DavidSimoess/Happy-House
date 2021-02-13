@@ -8,8 +8,9 @@ use Yii;
  * This is the model class for table "pedido".
  *
  * @property int $id
- * @property string $estado
+ * @property boolean $estado
  * @property string $data
+ * @property string $mensagem
  * @property int $id_user
  * @property int $id_imovel
  *
@@ -32,10 +33,10 @@ class Pedido extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['estado', 'data', 'id_user', 'id_imovel'], 'required'],
+            [['estado', 'data','mensagem', 'id_user', 'id_imovel'], 'required'],
+            [['estado', 'id_user', 'id_imovel'], 'integer'],
             [['data'], 'safe'],
-            [['id_user', 'id_imovel'], 'integer'],
-            [['estado'], 'string', 'max' => 50],
+            [['mensagem'], 'string', 'max' => 255],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
             [['id_imovel'], 'exist', 'skipOnError' => true, 'targetClass' => Imovel::className(), 'targetAttribute' => ['id_imovel' => 'id']],
         ];
@@ -50,6 +51,7 @@ class Pedido extends \yii\db\ActiveRecord
             'id' => 'ID',
             'estado' => 'Estado',
             'data' => 'Data',
+            'mensagem' =>'Mensagem',
             'id_user' => 'Id User',
             'id_imovel' => 'Id Imovel',
         ];

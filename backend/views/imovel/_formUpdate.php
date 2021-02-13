@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+/* @var $imagem common\models\Imagens */
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,7 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options'=>['enctype'=>'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'estado')->dropDownList(['Novo', 'Usado', 'Renovado']) ?>
+    <?= $form->field($model, 'estado')->dropDownList(['Novo'=>'Novo', 'Usado' =>'Usado', 'Renovado' => 'Renovado']) ?>
 
     <?= $form->field($model, 'area')->textInput() ?>
 
