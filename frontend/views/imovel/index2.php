@@ -139,7 +139,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
         </div>
 </section>
 <!-- footers 20 -->
-<section class="w3l-footers-20">
+<!--<section class="w3l-footers-20">
     <div class="footers20">
         <div class="container">
             <div class="footers20-content">
@@ -186,7 +186,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
     </button>
 
     <!-- /move top -->
-</section>
+</section>-->
 
 <!-- jQuery and Bootstrap JS -->
 <script src="assets/js/jquery-3.3.1.min.js"></script>

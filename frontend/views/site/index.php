@@ -30,14 +30,14 @@ $this->title = 'My Yii Application';
                 <div class="section-width">
                     <p>É bom estar em casa</p>
                     <h2>Encontre uma casa hoje!</h2>
-                    <div class="most-searches">
+                    <!--<div class="most-searches">
                         <h4>Mais procurados</h4>
                         <ul>
                             <li><a href="#link">Apartamentos</a></li>
                             <li><a href="#link">Casas Privadas</a></li>
                         </ul>
-                    </div>
-                    <form action="#" class="w3l-cover-3-gd" method="GET">
+                    </div>-->
+                    <!--<form action="#" class="w3l-cover-3-gd" method="GET">
                         <input type="search" name="text" placeholder="Enter keywords" required>
                         <span class="input-group-btn">
 								<select class="btn btn-default" name="ext" required>
@@ -70,7 +70,7 @@ $this->title = 'My Yii Application';
 								</select>
 							</span>
                         <button type="submit" class="btn-primary">Procurar</button>
-                    </form>
+                    </form>-->
                 </div>
                 <section id="bottom" class="demo">
                     <a href="#bottom"><span></span>Scroll</a>
@@ -184,7 +184,7 @@ $this->title = 'My Yii Application';
                         <span class="fa fa-home"></span>
                         <h4><a href="#feature" class="title-head">Certificado Energetico </a></h4>
                         <p>Garantia Happu House agora com +1 vantagem: uma parceria Happy House  | EDP que garante o certificado energético, obrigatório para anunciar a casa, e pagá-lo depois na sua</p>
-                        <a href="#more" class="more">Saiba mais <span class="fa fa-long-arrow-right"></span> </a>
+                        <a href="http://localhost/happyhouse/frontend/web/index.php?r=site%2Fabout" class="more">Saiba mais <span class="fa fa-long-arrow-right"></span> </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
@@ -192,7 +192,7 @@ $this->title = 'My Yii Application';
                         <span class="fa fa-building-o"></span>
                         <h4><a href="#feature" class="title-head">Casa a Estrear</a></h4>
                         <p>Uma seleção Happy House de Casas Novas, para quem prefere viver todas as vantagens de uma casa a estrear.</p>
-                        <a href="#more" class="more">Saiba mais  <span class="fa fa-long-arrow-right"></span> </a>
+                        <a href="http://localhost/happyhouse/frontend/web/index.php?r=site%2Fabout" class="more">Saiba mais  <span class="fa fa-long-arrow-right"></span> </a>
                     </div>
                 </div>
             </div>

@@ -52,14 +52,14 @@ $this->title = 'About';
                         <h3 class="title-big">A nossa experiência</h3>
                         <h5 class="mt-4">Nós temos mais de 15 anos de experiencia, mais de 20,000 pessoas a trabalhar conosco em mais de 70 paises
                             e queremos continuar a expandir o nosso negócio para continuar a adquirir mais colaboradores e acima de tudo
-                            oferecer aos nossos compradores os melhores negocios imobilíarios
+                            oferecer aos nossos compradores os melhores negocios imobilíarios.
                         </h5>
-                        <a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
+                        <!--<a href="#small-dialog1" class="popup-with-zoom-anim play-view d-block mt-md-5 mt-4">
                             <span class="video-play-icon">
                                 <span class="fa fa-play"></span>
                             </span>
                             Veja a nossa história
-                        </a>
+                        </a>-->
                         <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
                         <div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
                             <iframe src="https://www.youtube.com/embed/jqP3m3ElcxA" frameborder="0" allowfullscreen=""></iframe>
@@ -78,14 +78,14 @@ $this->title = 'About';
                     <div class="area-box">
                         <span class="fa fa-search-plus"></span>
                         <h4><a href="#feature" class="title-head">Ambiente familiar </a></h4>
-                        <p>Procura o imobiliario que mais se enquadra no seu seio familiar para poder ter um futuro melhor </p>
+                        <p>Procura o imobiliario que mais se enquadra no seu seio familiar para poder ter um futuro melhor. </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-4">
                     <div class="area-box">
                         <span class="fa fa-dollar"></span>
                         <h4><a href="#feature" class="title-head">Valores Acessiveis</a></h4>
-                        <p>Aqui na Happy-House temos dos valores mais baixos que existem no mercado em relação a preço qualidade</p>
+                        <p>Aqui na Happy-House temos dos valores mais baixos que existem no mercado em relação a preço qualidade.</p>
                     </div>
                 </div>
             </div>
@@ -96,10 +96,9 @@ $this->title = 'About';
             <div class="container py-lg-5 py-md-4 py-2">
                 <div class="row">
                     <div class="col-lg-6 left-wthree-img">
-                        <img src="assets/images/casa_da_pag_about" alt="" class="img-fluid radius-image" />
+                        <img src="assets/images/casa_da_pag_about" alt="" class="img-fluid-2 radius-image" />
                     </div>
                     <div class="col-lg-6 mt-lg-0 mt-5 align-self">
-                        <h6 class="title-small">Poru</h6>
                         <h3 class="title-big">Para ajudar os membros a terem mais sucesso</h3>
                         <p class="mt-4">Somos uma empresa nova que conta com membros com grande ambição e empenho para conseguir corresponder as expectativas dos clientes.</p>
                         <ul class="w3l-right-book mt-lg-5 mt-4">
@@ -185,7 +184,7 @@ $this->title = 'About';
     </section>
     <!-- //stats -->
     <!-- footers 20 -->
-    <section class="w3l-footers-20">
+    <!--<section class="w3l-footers-20">
         <div class="footers20">
             <div class="container">
                 <div class="footers20-content">
@@ -232,7 +231,7 @@ $this->title = 'About';
         </button>
 
         <!-- /move top -->
-    </section>
+    </section>-->
 
     <!-- jQuery and Bootstrap JS -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
