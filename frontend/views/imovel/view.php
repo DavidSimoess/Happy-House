@@ -91,7 +91,7 @@ use yii\widgets\DetailView;
         <h2 class="listing-title-h2">Casa - Lisboa</h2>
         <?php if(!Yii::$app->user->isGuest){ ?>
         <div class="action-buttons-agente">
-            <button class="contact-agent-btn-agente">Contactar agente</button>
+            <button type="button" class="contact-agent-btn-agente">Contactar agente</button>
         </div>
         <?php }?>
     </div>
@@ -190,19 +190,23 @@ use yii\widgets\DetailView;
 
 
 
-
+        <?php foreach ($modelUser as $user) { ?>
         <div class="info">
             <figure id="agent-picture" class="agent-picture">
 
-                <img class="img-fluid-f" src="<?php echo Yii::getAlias('@imageurl/'.$modelUser->imagem); ?>"  >
+                <img class="img-fluid-f" src="<?php echo Yii::getAlias('@imageurl/'.$user->imagem); ?>"  >
             </figure>
             <div class="office-info">
                 <h2 class="agent-name">
-                    <a id="agent-nome"><?= $modelUser->username ?></a>
+                    <a id="agent-nome"><?= $user->username ?></a>
+
                 </h2>
             </div>
 
         </div>
+
+        <?php } ?>
+        <?php if(!Yii::$app->user->isGuest){ ?>
         <?php
             $form = ActiveForm::begin([
                 'id' => 'form-pedido',
@@ -230,11 +234,12 @@ use yii\widgets\DetailView;
                 </div>
             </form>
         <?php ActiveForm::end() ?>
+        <?php }?>
     </div>
 </div>
 <br><br><br><br><br>
 
-
+<script src="assets/js/botao_agaente.js"></script>
 </body>
 </a>
 </html>

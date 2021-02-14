@@ -1,5 +1,6 @@
 <?php
 
+use common\models\Imagens;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
@@ -10,6 +11,9 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $model common\models\Imovel */
 /* @var $modelPedido common\models\Pedido */
+/* @var $imagem common\models\Imagens */
+/* @var $dataProvider2 yii\data\ActiveDataProvider */
+
 
 
 ?>
@@ -98,8 +102,9 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                     <div class="col-lg-4 col-md-6 listing-img">
                         <a href="<?=Url::to(['view', 'id'=>$model->id])?>">
                             <div class="box16">
+                                <?php $imagem = Imagens::findOne(['id_Imovel' => $model->id]); ?>
                                 <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                                <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                                <img class="img-fluid" src="<?php echo Yii::getAlias('@imageurl/'.$imagem->imagem); ?>" alt="">
                                 <div class="box-content">
                                     <h3 class="title">
                                         <?= $model->preco,'€' ?>
@@ -116,22 +121,23 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
                                 <li><span class="fa fa-shower"></span><?= $model->n_wc ?> </li>
                                 <li><span class="fa fa-share-square-o"></span><?= $model->area ,'m2'?></li>
                             </ul>
-                            <div class="author align-items-center mt-4">
-                                <a href="#img" class="comment-img">
-                                    <img src="assets/images/team1.jpg" alt="" class="img-fluid">
-                                </a>
-                                <ul class="blog-meta">
-                                    <li>
-                                        <span>
-                                        </span>
-                                    </li>
-                                    <li class="meta-item blog-lesson">
-                                        <span class="meta-value">Agente Vendedor</span>
-                                    </li>
-                                </ul>
-                            </div>
+<!--                            <div class="author align-items-center mt-4">-->
+<!--                                <a href="#img" class="comment-img">-->
+<!--                                    <img src="assets/images/team1.jpg" alt="" class="img-fluid">-->
+<!--                                </a>-->
+<!--                                <ul class="blog-meta">-->
+<!--                                    <li>-->
+<!--                                        <span>-->
+<!--                                        </span>-->
+<!--                                    </li>-->
+<!--                                    <li class="meta-item blog-lesson">-->
+<!--                                        <span class="meta-value">Agente Vendedor</span>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
                         </div>
                     </div>
+
                 <?php } ?>
 
 

@@ -1,6 +1,10 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+use common\models\Imagens;
+use yii\helpers\Url;
 
 $this->title = 'My Yii Application';
 ?>
@@ -30,47 +34,7 @@ $this->title = 'My Yii Application';
                 <div class="section-width">
                     <p>É bom estar em casa</p>
                     <h2>Encontre uma casa hoje!</h2>
-                    <!--<div class="most-searches">
-                        <h4>Mais procurados</h4>
-                        <ul>
-                            <li><a href="#link">Apartamentos</a></li>
-                            <li><a href="#link">Casas Privadas</a></li>
-                        </ul>
-                    </div>-->
-                    <!--<form action="#" class="w3l-cover-3-gd" method="GET">
-                        <input type="search" name="text" placeholder="Enter keywords" required>
-                        <span class="input-group-btn">
-								<select class="btn btn-default" name="ext" required>
-									<option selected="">Distritos</option>
-									<option>Aveiro</option>
-                                    <option>Beja</option>
-									<option>Braga</option>
-									<option>Bragrança</option>
-									<option>Castelo Branco</option>
-									<option>Coimbra</option>
-                                    <option>Évora</option>
-                                    <option>Faro</option>
-                                    <option>Guarda</option>
-                                    <option>Leiria</option>
-                                    <option>Lisboa</option>
-                                    <option>Portalegre</option>
-                                    <option>Porto</option>
-                                    <option>Santarem</option>
-                                    <option>Setubal</option>
-									<option>Viana do Castelo</option>
-									<option>Vila Real</option>
-                                    <option>Viseu</option>
-								</select>
-							</span>
-                        <span class="input-group-btn">
-								<select class="btn btn-default" name="ext" required>
-									<option selected="">Tipos</option>
-									<option>Apartamentos</option>
-									<option>Casas Privadas</option>
-								</select>
-							</span>
-                        <button type="submit" class="btn-primary">Procurar</button>
-                    </form>-->
+
                 </div>
                 <section id="bottom" class="demo">
                     <a href="#bottom"><span></span>Scroll</a>
@@ -86,82 +50,21 @@ $this->title = 'My Yii Application';
                 <h3 class="title-big">Destaques</h3>
             </div>
             <div class="row pt-md-5 pt-4">
+                <?php foreach ($dataProvider->models as $model) { ?>
                 <div class="col-lg-4 col-md-6">
-                    <a href="property-single.html">
+                    <a href="<?=Url::to(['imovel/view', 'id'=>$model->id])?>">
                         <div class="box16">
+                            <?php $imagem = Imagens::findOne(['id_Imovel' => $model->id]); ?>
                             <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                            <img class="img-fluid" src="<?php echo Yii::getAlias('@imageurl/'.$imagem->imagem); ?>" alt="">
                             <div class="box-content">
-                                <h3 class="title">2500000€</h3>
-                                <span class="post">Rossio lisboa </span>
+                                <h3 class="title"><?= $model->preco ?></h3>
+                                <span class="post"><?= $model->cidade?> </span>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
-                    <a href="property-single.html">
-                        <div class="box16">
-                            <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p2.jpg" alt="">
-                            <div class="box-content">
-                                <h3 class="title">$37,00,000</h3>
-                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-lg-0 pt-lg-0 mt-4 pt-md-2">
-                    <a href="property-single.html">
-                        <div class="box16">
-                            <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p3.jpg" alt="">
-                            <div class="box-content">
-                                <h3 class="title">$41,00,000</h3>
-                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
-                    <a href="property-single.html">
-                        <div class="box16">
-                            <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p4.jpg" alt="">
-                            <div class="box-content">
-                                <h3 class="title">$19,00,000</h3>
-                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
-                    <a href="property-single.html">
-                        <div class="box16">
-                            <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p5.jpg" alt="">
-                            <div class="box-content">
-                                <h3 class="title">$26,00,000</h3>
-                                <span class="post">51 Merrick Way, Coral Gables, USA</span>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 mt-4 pt-md-2">
-                    <a href="property-single.html">
-                        <div class="box16">
-                            <div class="rentext-listing-category"><span>Comprar</span><span>Arrendar</span></div>
-                            <img class="img-fluid" src="assets/images/p6.jpg" alt="">
-                            <div class="box-content">
-                                <h3 class="title">230,000€</h3>
-                                <span class="post">Grande Lisboa, Cascais</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>

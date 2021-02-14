@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Imagens;
+use common\models\User;
 use frontend\models\PedidoForm;
 use Yii;
 use common\models\Imovel;
@@ -62,7 +63,7 @@ class ImovelController extends Controller
 
 
 
-        $modelUser = Yii::$app->getUser()->identity;
+        $modelUser = $this->findModelUser($id);
         $modelImagem = $this->findModelImagem($id);
         $modelPedido = new PedidoForm();
 
@@ -149,8 +150,12 @@ class ImovelController extends Controller
     }
 
     public function actionIndex2()
+
     {
+
         $model = Imovel::findOne(1);
+
+
         $dataProvider = new ActiveDataProvider([
             'query' => Imovel::find(),
             'pagination' => [
@@ -167,6 +172,18 @@ class ImovelController extends Controller
         //var_dump($modelImagem);
         //die();
         return $modelImagem;
+
+
+    }
+
+    protected function findModelUser($idImovel)
+    {
+        $imovel = Imovel::findOne(['id' => $idImovel]);
+        $iduser = $imovel->id_user;
+        $modelUser = User::findAll(['id' => $iduser]);
+        //var_dump($modelImagem);
+        //die();
+        return $modelUser;
 
 
     }

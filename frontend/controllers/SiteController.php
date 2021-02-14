@@ -1,10 +1,12 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\Imovel;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\data\ActiveDataProvider;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -72,7 +74,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+        $model = Imovel::find();
+        $model->limit(6);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $model,
+            'pagination' => false,
+
+
+        ]);
+
+        return $this->render('index', ['dataProvider' => $dataProvider,'model' => $model ]);
+
     }
 
     /**
