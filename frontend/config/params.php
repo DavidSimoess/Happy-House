@@ -1,4 +1,4 @@
 <?php
 return [
-    'adminEmail' => 'hugo.16eusebio@gmail.com',
+    'adminEmail' => 'happuhouse24@gmail.com',
 ];

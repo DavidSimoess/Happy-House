@@ -62,6 +62,7 @@ class ImovelController extends Controller
 
 
 
+        $modelUser = Yii::$app->getUser()->identity;
         $modelImagem = $this->findModelImagem($id);
         $modelPedido = new PedidoForm();
 
@@ -73,6 +74,8 @@ class ImovelController extends Controller
             'model' => $this->findModel($id),
             'dataProvider' => $dataProvider,
             'modelImagem' => $modelImagem,
+            'modelUser' => $modelUser,
+
             'modelPedido' => $modelPedido,
         ]);
     }

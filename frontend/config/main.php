@@ -12,6 +12,12 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'urlManagerBackend' => [
+            'class' => 'yii\web\urlManager',
+            'baseUrl' => 'backend/web/imagens/',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
