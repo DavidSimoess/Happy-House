@@ -10,6 +10,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Imovel */
 /* @var $modelUser common\models\User */
+/* @var $modelImagem common\models\Imagens */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $form yii\widgets\ActiveForm */
 /* @var $modelPedido frontend\models\PedidoForm */
@@ -101,68 +102,23 @@ use yii\widgets\DetailView;
         <div class="flex-item">
             <figure class="listing-picture-big">
                 <picture>
-                    <img src="assets/images/p1.jpg" alt="">
+                    <img src="" alt="">
 
                 </picture>
             </figure>
         </div>
         <div class="flex-container-thirds">
+            <?php foreach ($modelImagem as $imagem) { ?>
+
             <div class="flex-item">
                 <figure class="listing-picture">
                     <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
+                        <img class="img-fluid" src="<?php echo Yii::getAlias('@imageurl/'.$imagem->imagem); ?>"width="400" height="400" >
                     </picture>
                 </figure>
             </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
-            <div class="flex-item">
-                <figure class="listing-picture">
-                    <picture>
-                        <img class="img-fluid" src="assets/images/p1.jpg" alt="">
-                    </picture>
-                </figure>
-            </div>
+            <?php } ?>
+
 
         </div>
     </div>
@@ -231,13 +187,18 @@ use yii\widgets\DetailView;
                 </div>
             </div>
         </div>
+
+
+
+
         <div class="info">
             <figure id="agent-picture" class="agent-picture">
-                <img class="img-fluid-f" src="assets/images/p1.jpg" alt="">
+
+                <img class="img-fluid-f" src="<?php echo Yii::getAlias('@imageurl/'.$modelUser->imagem); ?>"  >
             </figure>
             <div class="office-info">
                 <h2 class="agent-name">
-                    <a id="agent-nome"><?= $model->morada ?></a>
+                    <a id="agent-nome"><?= $modelUser->username ?></a>
                 </h2>
             </div>
 
