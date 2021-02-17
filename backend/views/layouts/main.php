@@ -45,6 +45,7 @@ AppAsset::register($this);
             $menuItems[] = ['label' => 'Gestão de Pedidos', 'url' => ['/pedido/index']];
             $menuItems[] = ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']];
             $menuItems[] = ['label' => 'Gestão de Alugueres', 'url' => ['/aluguer/index']];
+            $menuItems[] = ['label' => 'Gestão de Recurso', 'url' => ['/recurso/index']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(
@@ -59,6 +60,7 @@ AppAsset::register($this);
             $menuItems[] = ['label' => 'Gestão de Pedidos', 'url' => ['/pedido/index']];
             $menuItems[] = ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']];
             $menuItems[] = ['label' => 'Gestão de Alugueres', 'url' => ['/aluguer/index']];
+            $menuItems[] = ['label' => 'Gestão de Recurso', 'url' => ['/recurso/index']];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
                 . Html::submitButton(

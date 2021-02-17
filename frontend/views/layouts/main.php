@@ -38,6 +38,8 @@ AppAsset::register($this);
         ['label' => 'Comprar', 'url' => ['/imovel/index2']],
         ['label' => 'Sobre', 'url' => ['/site/about']],
         ['label' => 'Contactos', 'url' => ['/site/contact']],
+        ['label' => 'Recurso', 'url' => ['/site/recurso']],
+
 
 
     ];

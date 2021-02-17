@@ -2,6 +2,9 @@
 namespace frontend\controllers;
 
 use common\models\Imovel;
+use common\models\Recurso;
+use frontend\models\PedidoForm;
+use frontend\models\RecursoForm;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -89,6 +92,8 @@ class SiteController extends Controller
 
     }
 
+
+
     /**
      * Logs in a user.
      *
@@ -173,6 +178,20 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model' => $model,
         ]);
+    }
+    public function actionRecurso()
+    {
+
+        $modelRecurso = new RecursoForm();
+        if ( $modelRecurso->load(Yii::$app->request->post()) &&  $modelRecurso->enviarRecurso()) {
+            Yii::$app->session->setFlash('success', 'Enviado com sucesso!');
+
+        }
+
+        return $this->render('recurso', [
+            'modelRecurso' => $modelRecurso,
+        ]);
+       // return  $modelRecurso;
     }
 
     /**
