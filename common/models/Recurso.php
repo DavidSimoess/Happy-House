@@ -2,7 +2,7 @@
 
 namespace common\models;
 
-use yii;
+use Yii;
 
 /**
  * This is the model class for table "recurso".
@@ -11,6 +11,8 @@ use yii;
  * @property string $categoria
  * @property string $mensagem
  * @property string $email
+ * @property string $data
+ * @property int $visto
  * @property int $id_user
  *
  * @property User $user
@@ -31,9 +33,11 @@ class Recurso extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['categoria', 'mensagem', 'email', 'id_user'], 'required'],
-            [['id_user'], 'integer'],
-            [['categoria', 'mensagem', 'email'], 'string', 'max' => 255],
+            [['categoria'], 'string'],
+            [['mensagem', 'email', 'data', 'visto', 'id_user'], 'required'],
+            [['data'], 'safe'],
+            [['visto', 'id_user'], 'integer'],
+            [['mensagem', 'email'], 'string', 'max' => 255],
             [['id_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_user' => 'id']],
         ];
     }
@@ -48,6 +52,8 @@ class Recurso extends \yii\db\ActiveRecord
             'categoria' => 'Categoria',
             'mensagem' => 'Mensagem',
             'email' => 'Email',
+            'data' => 'Data',
+            'visto' => 'Visto',
             'id_user' => 'Id User',
         ];
     }

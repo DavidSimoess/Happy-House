@@ -29,6 +29,8 @@ class RecursoForm extends Model
             $recurso->categoria = $this->categoria;
             $recurso->mensagem = $this->mensagem;
             $recurso->email = $this->email;
+            $recurso->data = date('Y-m-d H:i:s');
+            $recurso->visto = false;
             $recurso->id_user = Yii::$app->user->getId();
             $recurso->save(false);
 

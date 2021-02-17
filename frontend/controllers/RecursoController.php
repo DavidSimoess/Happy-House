@@ -1,17 +1,16 @@
 <?php
 
-namespace frontend\controllers;
+namespace app\controllers;
 
-use common\models\Recurso;
-use frontend\models\RecursoForm;
 use Yii;
+use common\models\Recurso;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * PedidoController implements the CRUD actions for Pedido model.
+ * RecursoController implements the CRUD actions for Recurso model.
  */
 class RecursoController extends Controller
 {
@@ -31,7 +30,7 @@ class RecursoController extends Controller
     }
 
     /**
-     * Lists all Pedido models.
+     * Lists all Recurso models.
      * @return mixed
      */
     public function actionIndex()
@@ -46,7 +45,7 @@ class RecursoController extends Controller
     }
 
     /**
-     * Displays a single Pedido model.
+     * Displays a single Recurso model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,22 +58,25 @@ class RecursoController extends Controller
     }
 
     /**
-     * Creates a new Pedido model.
+     * Creates a new Recurso model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new RecursoForm();
-        if ($model->load(Yii::$app->request->post()) && $model->enviarRecurso()) {
+        $model = new Recurso();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('create', ['model' => $model,]);
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
-     * Updates an existing Pedido model.
+     * Updates an existing Recurso model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -94,7 +96,7 @@ class RecursoController extends Controller
     }
 
     /**
-     * Deletes an existing Pedido model.
+     * Deletes an existing Recurso model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -108,7 +110,7 @@ class RecursoController extends Controller
     }
 
     /**
-     * Finds the Pedido model based on its primary key value.
+     * Finds the Recurso model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
      * @return Recurso the loaded model

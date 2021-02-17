@@ -150,7 +150,6 @@ class ImovelController extends Controller
     }
 
     public function actionIndex2()
-
     {
 
         $model = Imovel::findOne(1);

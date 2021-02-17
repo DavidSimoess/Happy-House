@@ -33,6 +33,8 @@ $this->params['breadcrumbs'][] = '/'.$this->title;
             'categoria',
             'mensagem',
             'email',
+            'data',
+            'visto',
             'id_user',
 
         ],

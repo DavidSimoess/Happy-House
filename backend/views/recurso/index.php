@@ -7,7 +7,7 @@ rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Recurso';
+$this->title = 'Recursos';
 $this->params['breadcrumbs'][] = '/'.$this->title;
 ?>
 <div class="recurso-index">
@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = '/'.$this->title;
             'categoria',
             'mensagem',
             'email',
+            'visto',
             'id_user',
 
 

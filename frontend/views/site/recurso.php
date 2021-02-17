@@ -55,7 +55,7 @@ $this->title = 'Recurso';
                                 <div class="form-grid">
                                     <?php $form = ActiveForm::begin(['id' => 'recurso-form']); ?>
 
-                                    <?= $form->field($modelRecurso, 'categoria')->dropDownList(['Reclmação' => 'Reclmação', 'elogio' => 'elogio', 'outro' => 'outro']) ?>
+                                    <?= $form->field($modelRecurso, 'categoria')->dropDownList(['Reclamação' => 'Reclamação', 'Elogio' => 'Elogio', 'Outro' => 'Outro']) ?>
 
                                     <?= $form->field($modelRecurso, 'email') ?>
 

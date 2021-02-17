@@ -12,11 +12,13 @@ use yii\widgets\ActiveForm;
 
         <?php $form = ActiveForm::begin(['id' => 'recurso-form']); ?>
 
-        <?= $form->field($model, 'categoria')->dropDownList(['Reclmação' => 'Reclmação', 'elogio' => 'elogio', 'outro' => 'outro']) ?>
+        <?= $form->field($model, 'categoria')->dropDownList(['Reclamação' => 'Reclamação', 'Elogio' => 'Elogio', 'Outro' => 'Outro']) ?>
 
         <?= $form->field($model, 'email') ?>
 
         <?= $form->field($model, 'mensagem')->textarea(['rows' => 6]) ?>
+
+        <?= $form->field($model, 'visto')->checkbox() ?>
 
 
     <div class="form-group">
